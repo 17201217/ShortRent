@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.shortrent.dao.HouseVoDao">
+
+	<!--查询出几室几厅对应的数量-->
+	<select id="getHouseCountVOByLocate"  resultType="com.shortrent.vo.HouseVo">
+		select type,count(house_id) count from house where  online=1 group by type
+	</select>
+</mapper> 

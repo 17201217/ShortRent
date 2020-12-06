@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>短租网网站</title>
+    <link rel="shortcut icon" href="" />
+    <link rel="stylesheet" href="css/system/housedetail.css"/>
+</head>
+
+<body>
+<input type="text" id="i1" th:value="${session.user_id}" hidden="true"><br />
+<button class="back" id="back"><img src="images/system/back.png" alt=""></button>
+
+<div class="contain">
+
+    <div class="left">
+        <div class="photo" id="photo">
+        </div>
+
+        <div class="userinfo">
+            <table>
+                <tr>
+                    <td colspan="2">联系方式：</td>
+                </tr>
+                <tr>
+                    <td id="name">姓名：</td>
+                    <td id="sex">性别：</td>
+                </tr>
+                <tr>
+                    <td id="phone">电话：</td>
+                    <td id="email">邮箱：</td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+    <div class="right">
+        <div class="info">
+            <span id="house_name"></span><br /><br />
+            <span id="position"></span><br /><br />
+            <span id="price"></span><br /><br />
+            <span id="type"></span><br /><br />
+            <span id="size"></span><br /><br />
+            <span id="description"></span><br /><br />
+            <span id="user_id"></span><br /><br />
+        </div>
+
+        <div class="op">
+            <button type="button" class="btu1" id="btu1">预定</button><br />
+            <div id="op1">
+                <br />
+                开始时间：<input type="Date" id="starttime"><br />
+                结束时间：<input type="Date" id="endtime"><br /><br />
+                <button type="button" id="reserve" class="reserve">确定</button><br />
+            </div>
+
+            <button type="button" class="btu2" id="btu2">预约看房</button>
+            <button type="button" class="collect" id="collect"><img src="image/collect.PNG" alt=""></button><br />
+            <div id="op2">
+                <br />
+                选择日期：<input type="Date" id="reservedate"><br />
+                选择时间：<input type="time" id="reservetime"><br /><br />
+                <button type="button" id="reserve2" class="reserve">预约看房</button>
+            </div>
+
+        </div>
+    </div>
+    <div id="wrapper"></div>
+</div>
+
+
+<style>
+	#wrapper{
+		width: 1000px;
+		height: 600px;
+	}
+    </style>
+
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=960619ac2b8c5afe4141faee82ce8952"></script>
+
+<script>
+	window.onload = function(){
+	    console.log($('#position').text());
+	    $.ajax({
+            type: "get",
+            url: "https://restapi.amap.com/v3/geocode/geo?key=960619ac2b8c5afe4141faee82ce8952&s=rsv3&city=35&address="+$('#position').text().split("：")[1],
+            success: function (response) {
+                let res = response;
+                var geo_codes = res.geocodes;
+                console.log(geo_codes[0].location);
+                Latitude_longitude = geo_codes[0].location.split(",");
+                var map = new AMap.Map('wrapper', {
+                    resizeEnable: true,
+                    center: [Latitude_longitude[0],Latitude_longitude[1]],
+                    zoom: 15
+                });
+	            var marker = new AMap.Marker({
+                    position: new AMap.LngLat(Latitude_longitude[0],Latitude_longitude[1])
+                });
+                map.add(marker);
+            }
+        });
+    }
+
+    </script>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#op1").hide();
+            $("#op2").hide();
+            $("#btu1").click(function () {
+                $("#op1").fadeToggle();
+            });
+            $("#btu2").click(function () {
+                $("#op2").fadeToggle();
+            });
+            $("#back").click(function () {
+            	window.history.back();
+            });
+        });
+
+        var a = GetRequest();
+        var userid;
+        console.log("id:" + a['house_id']) //打印出传过来的i
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "get",
+                url: "https://localhost:8080/api/v1/house/" + a['house_id'],
+                success: function (response) {
+                    let houses = response;
+                    userid = houses.user_id;
+                    let str = `<img class="image" src="img/rent-img/${houses.photo}"/>`;
+                    $("#photo").append(str);
+                    $("#house_name").html("名称：" + houses.house_name);
+                    $("#price").html("价格：" + houses.house_price + " /月");
+                    $("#position").html("位置：" + houses.locate);
+                    $("#type").html("户型：" + houses.type);
+                    $("#size").html("面积：" + houses.size + " m²");
+                    $("#description").html("描述：" + houses.description);
+                    $("#user_id").html("上传者：" + houses.user_id);
+
+                    $.ajax({
+                        type: "get",
+                        url: "https://localhost:8080/api/v1/user/" + userid,
+                        success: function (response) {
+                            let user = response;
+                            $("#name").html("姓名：" + user.user_name);
+                            $("#sex").html("性别：" + user.sex);
+                            $("#phone").html("电话：" + user.user_tel);
+                            $("#email").html("邮箱：" + user.user_email);
+
+                        }
+                    });
+                }
+            });
+        });
+
+
+        $(document).ready(function () {
+            $('#collect').click(function () {
+                var time = getdate();
+                if ($("#i1").val() == "") {
+                    alert("请先登录");
+                    //window.location.href = "/login";
+                } else {
+                    var user_id = $("#i1").val();
+                    var house_id = a['house_id'];
+                    var collecttime = time;
+
+                    var collect = {
+                        user_id: user_id,
+                        house_id: house_id,
+                        collecttime: collecttime
+                    };
+                    $.ajax({
+                        type: "post",
+                        url: "https://localhost:8080/api/v1/collect",
+                        data: JSON.stringify(collect),
+                        contentType: "application/json;charset=utf-8",
+                        dataType: "text",
+                        success: function (data) {
+                            alert("收藏房源信息成功!!!");
+
+                        },
+                        error: function (data) {
+                            var json = JSON.parse(data.responseText);
+                            alert(json.message);
+                        }
+                    });
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $("#reserve").click(function (e) {
+                var time = getdate();
+                console.log(time);
+                if ($("#i1").val() == "") {
+                    alert("请先登录");
+                    //window.location.href = "/login";
+                } else {
+
+                    var time1 = $("#starttime").val();
+                    var time2 = $("#endtime").val();
+                    if (time1 == "" || time2 == "") {
+                        alert("请选择你要预约的时间段");
+                    } else {
+                        if (time1 > time2) {
+                            alert("选择时间段不合理");
+                        } else {
+                            //计算一下租房天数方便计算总价格
+                            var strDateStart = time1;
+                            var strDateEnd = time2;
+                            var strSeparator = "-"; //日期分隔符
+                            var oDate1;
+                            var oDate2;
+                            var iDays;
+                            oDate1 = strDateStart.split(strSeparator);
+                            oDate2 = strDateEnd.split(strSeparator);
+                            var strDateS = new Date(oDate1[0], oDate1[1] - 1, oDate1[2]);
+                            var strDateE = new Date(oDate2[0], oDate2[1] - 1, oDate2[2]);
+                            iDays = parseInt(Math.abs(strDateS - strDateE) / 1000 / 60 / 60 / 24) + 1;//把相差的毫秒数转换为天数
+                            console.log(iDays + "天");
+
+                            if (iDays > 7) {
+                                alert("此网站为短租网站，你只能短租租房在一个星期以内");
+                            } else {
+                                var price = $("#price").html();
+                                console.log(price);
+                                var price2 = new Array();
+                                price2 = price.split("：");
+                                var price3 = new Array();
+                                price3 = price2[1].split("<");
+                                var totalcost = parseInt((parseInt(price3) / 30) * (parseInt(iDays)));
+                                console.log(totalcost);
+                                var order = {
+                                    rent_id: $("#i1").val(),
+                                    house_id: a['house_id'],
+                                    order_time: time,
+                                    starttime: $("#starttime").val(),
+                                    totalcost: totalcost,
+                                    endtime: $("#endtime").val()
+                                };
+
+                                $.ajax({
+                                    type: "post",
+                                    url: "https://localhost:8080/api/v1/orderlist",
+                                    data: JSON.stringify(order),
+                                    contentType: "application/json;charset=utf-8",
+                                    dataType: "text",
+                                    success: function (data) {
+                                        alert("下订单成功!!!");
+
+                                    },
+                                    error: function (data) {
+                                        var json = JSON.parse(data.responseText);
+                                        alert(json.message);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $("#reserve2").click(function () {
+                if ($("#i1").val() == "") {
+                    alert("请先登录");
+                    //window.location.href = "/login";
+                } else {
+                    var choosereservedate = $("#reservedate").val();
+                    var choosereservetime = $("#reservetime").val();
+                    if (choosereservetime == "" || choosereservetime == "") {
+                        alert("请选择预约时间");
+                    } else {
+                        var nowtime = getdate();
+                        var gettime = choosereservedate + " " + choosereservetime;
+                        console.log(choosereservedate + "," + choosereservetime);
+
+                        //此处时间校验存在问题
+                        if (nowtime > gettime) {
+                            alert("预约日期选择非法");
+                        } else {
+                            var reserve = {
+                                user_id: $("#i1").val(),
+                                house_id: a['house_id'],
+                                reserve_time: gettime,
+                            };
+                            $.ajax({
+                                type: "post",
+                                url: "https://localhost:8080/api/v1/reserve/add",
+                                data: JSON.stringify(reserve),
+                                contentType: "application/json;charset=utf-8",
+                                dataType: "text",
+                                success: function (data) {
+                                    alert("预约成功!!!");
+
+                                },
+                                error: function (data) {
+                                    var json = JSON.parse(data.responseText);
+                                    alert(json.message);
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        });
+
+        function getdate() {
+            var myDate = new Date();
+            var year = myDate.getFullYear();//获取当前年
+            var month = myDate.getMonth() + 1;//获取当前月
+            var date = myDate.getDate();//获取当前日
+            var h = myDate.getHours();       //获取当前小时数(0-23)
+            var m = myDate.getMinutes();     //获取当前分钟数(0-59)
+            var s = myDate.getSeconds();
+            var now = year + '-' + month + "-" + date + " " + h + ':' + m + ':' + s;
+            return now;
+        }
+    </script>
+
+</body>
+</html>

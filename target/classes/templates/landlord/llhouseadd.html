@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/landlord/llcss.css" />
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>创建房屋</title>
+</head>
+<body>
+     <input type="text" id="i1" th:value="${session.ll_id}" hidden="true"><br />
+        <form id="form" method="post" enctype="multipart/form-data">
+        <table class="table table-inverse">
+                <tbody>
+                    <tr>
+                    	<td>房屋名称</td>
+                        <td><input type="text" id="text2"></td>                       
+                    </tr> 
+                    <tr>
+                    	<td>房屋类型</td>
+                        <td><input type="text" id="text3"></td>                       
+                    </tr>
+                    <tr>
+                    	<td>房屋大小</td>
+                        <td><input type="text" id="text4"></td>                       
+                    </tr>
+                    <tr>
+                    	<td>房屋价格</td>
+                        <td><input type="text" id="text5"></td>                       
+                    </tr>
+                    <tr>
+                    	<td>房屋图片</td>
+                        <td><input type="file" name="file" id="file"/></td>                       
+                    </tr>
+                    <tr>
+                    	<td>房屋位置</td>
+                        <td><input type="text" id="text7"></td>                       
+                    </tr>
+                    <tr>
+                    	<td>房屋描述</td>
+                        <td><input type="text" id="text8"></td>                       
+                    </tr>                 
+                </tbody>
+        </table>
+        <input type="button" value="增加" id="btn" class="btuadd">
+        </form>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+    
+        //关于图片命名问题存在问题
+    
+        //这个地方存在问题，不将项目中的文件夹刷新，图片显示不出来。
+        $(document).ready(function () {
+            $("#btn").click(function (e) {        	
+                e.preventDefault();
+           
+                var user_id1 = $("#i1").val();
+                var house_name1 = document.getElementById("text2").value;
+                var type1 = document.getElementById("text3").value;
+                var size1 = document.getElementById("text4").value;
+                var house_price1 = document.getElementById("text5").value;
+                var fileName = $("#file").val();;
+                console.log(fileName+"dd");
+                var photo1 =  fileName.substring(fileName.lastIndexOf("\\")+1);
+                var locate1 = document.getElementById("text7").value;
+                var description1 = document.getElementById("text8").value;    
+                console.log(photo1);
+                var house ={
+                    	user_id : user_id1,
+                        house_name : house_name1,
+                        type : type1,
+                        size : size1,
+                        house_price : house_price1,
+                        photo : photo1,
+                        online : 0,
+                        status : 0,
+                        locate : locate1,
+                        flag : 0,
+                        description: description1
+                    };
+                $.ajax({
+                    type: "post",
+                    url: "https://localhost:8080/api/v1/house",
+                    data: JSON.stringify(house),
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "text",
+                    success: function (data){ 
+                    	var formData = new FormData($("#form")[0]);//获取表单中的文件
+                        console.log(formData);
+                        $.ajax({
+                            type: "post",
+                            url: "https://localhost:8080/upload",
+                            data:formData,//参数
+                            cache: false,
+                            processData: false,
+                            contentType: false,
+                            success:function (data) {
+                            	
+                            },error:function () {
+                                alert("图片上传失败!!!");
+                            }
+                        });
+        	        	alert("增加成功!!!");
+        	        	
+                    },
+                    error: function (data) { 
+                    	var json=JSON.parse(data.responseText);
+                        alert(json.message);
+                    } 
+                });           
+            });
+        });
+
+    </script>
+</body>
+</html>

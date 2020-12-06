@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>账号注册</title>
+<link rel="stylesheet" href="css/system/registered.css" />
+</head>
+<body>
+	
+	
+	<div class="body">
+		<div class="body_count">
+			<div class="login_count">
+				<div class="login_count_a">
+					<div id="all">
+						<div class="login_account_count">
+							<span>账号:</span>
+							<input type="text" class="mobile_input" placeholder="请输入账号" id="i1" />
+						</div>
+
+						<div class="login_account_count">
+							<span>密码:</span>
+							<input type="text" class="mobile_input" placeholder="请输入密码" id="i2" />
+						</div>
+
+						<div class="login_account_count">
+							<span>邮箱:</span>
+							<input type="text" class="mobile_input" placeholder="请输入邮箱" id="i3" />
+						</div>
+
+						<div class="login_account_count">
+							<span>姓名:</span>
+							<input type="text" class="mobile_input" placeholder="请输入姓名" id="i4" />
+						</div>
+
+						<div class="login_account_count">
+							<span>手机:</span>
+							<input type="text" class="mobile_input" placeholder="请输入手机号" id="i6" />
+						</div>
+
+						<div class="r">
+							&nbsp;<span>性别:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="radio" name="sex" value="男" checked>男
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    						<input type="radio" name="sex" value="女">女<br /> 
+						</div>
+
+						<button class="login_account_button" id="btu">注册</button>
+
+						<div class="aa">
+							<a  href="login">已有帐号,去登陆</a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+        $(document).ready(function () {
+            $("#btu").click(function (e) {
+                var reg = /^[0-9]*@.*com$/;               
+                var pattern = new RegExp(reg);   
+                if($("#i1").val().trim()=="" || $("#i2").val().trim()=="" || $("#i3").val().trim()=="" 
+                     || $("#i4").val().trim()=="" || $("#i6").val().trim()==""){
+                    alert("请填写所有输入框")
+                }else if(!pattern.test($("#i3").val())){
+                    alert("请填写正确的邮箱")
+                }
+                else{
+                    $.ajax({
+                        type: "post",
+                        url: "https://localhost:8080/api/v1/system/registered",
+                        data: JSON.stringify({
+                            user_id: $("#i1").val(),
+                            user_password: $("#i2").val(),
+                            user_email: $("#i3").val(),
+                            user_name: $("#i4").val(),
+                            sex: $("input[type='radio']:checked").val(),
+                            user_tel: $("#i6").val(),
+                            category: 0,
+                            islock: 0
+                        }),
+                        dataType: 'json',
+                        contentType: 'application/json; charset=UTF-8',
+                        success : function(response){
+                            alert("注册成功")
+                            window.location.href="/?user_id="+$("#i1").val();
+                        },
+                        error : function(response){
+                            alert("注册失败，账号或邮箱或手机号已被注册！")
+                        }
+                    });
+                }
+            });
+        });
+        
+        $(document).ready(function(){
+            $("#btu").mouseenter(function(){
+                $("#btu").css("background-color","#34D8DE");
+			});
+			$("#btu").mouseleave(function(){
+                $("#btu").css("background-color"," #40E4E5");
+			});
+        });
+
+    </script>
+</body>
+</html>

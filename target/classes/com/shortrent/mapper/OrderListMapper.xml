@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.shortrent.dao.OrderListDao"> 
+ 
+ 	<!-- 生成订单 -->
+ 	<insert id="addOrder" parameterType="com.shortrent.pojo.OrderList">
+  		insert into orderlist(rent_id,house_id,order_time,totalcost,starttime,endtime)
+  		values(#{rent_id},#{house_id},#{order_time},#{totalcost},#{starttime},#{endtime})
+  	</insert>
+  	
+  	<!-- 查询所有未审核订单 -->
+  	<select id="getAllOrders2" resultType="com.shortrent.pojo.OrderList">
+  		select * from orderlist where flag = 0 order by order_id limit #{start}, #{end}
+  	</select>
+ 
+  	<!-- 审核通过 -->
+  	<update id="auditOrder" parameterType="int">
+  		update orderlist set flag=1 where order_id=#{order_id}
+  	</update>
+  	
+  	<!-- 删除订单（审核未通过） -->
+  	<delete id="deleteOrder" parameterType="int">
+  		delete from orderlist where order_id=#{order_id}
+  	</delete>
+  	
+  	<!-- 查询未审核订单数量 -->
+  	<select id="getCount" resultType="Integer">
+  		select count(order_id) from orderlist where flag = 0;;
+  	</select>
+    
+    <!-- 查询某个id所有订单，分页 -->
+    <select id="getOrderListByid" parameterType="Map" resultType="com.shortrent.pojo.OrderList">
+  		select * from orderlist where rent_id = #{user_id} order by order_time desc limit #{start}, #{end}
+  	</select>
+  	
+  	<!-- 查询某个id订单数量 -->
+  	<select id="getCountbyid" parameterType="String" resultType="Integer">
+  		select count(order_id) from orderlist where rent_id = #{user_id};
+  	</select>
+
+
+
+	<update id="updateOrderPay" parameterType="int">
+		update orderlist set ispay =1 where order_id=#{order_id}
+	</update>
+
+	<!-- 查询该用户所有的未支付的订单 -->
+	<select id="getOrderListByid2" parameterType="Map" resultType="com.shortrent.pojo.OrderList">
+		select * from orderlist where rent_id = #{user_id} and ispay = 0 order by order_time desc limit #{start}, #{end}
+	</select>
+
+	<!-- 查询该用户所有未支付的订单数量 -->
+	<select id="getCount2" parameterType="String" resultType="Integer">
+		select count(order_id) from orderlist where rent_id = #{user_id} and ispay = 0
+	</select>
+
+	<!-- 查询该用户所有的未支付的订单 -->
+	<select id="getOrderListByid3" parameterType="Map" resultType="com.shortrent.pojo.OrderList">
+		select * from orderlist where rent_id = #{user_id} and ispay = 1 order by order_time desc limit #{start}, #{end}
+	</select>
+
+	<!-- 查询该用户所有未支付的订单数量 -->
+	<select id="getCount3" parameterType="String" resultType="Integer">
+		select count(order_id) from orderlist where rent_id = #{user_id} and ispay = 1
+	</select>
+    
+</mapper> 

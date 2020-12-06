@@ -1,0 +1,803 @@
+2020-11-20 08:17:46,771 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 2296 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 08:17:46,771 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 08:17:49,381 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 08:17:49,397 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 08:17:49,412 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 08:17:49,412 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 08:17:49,428 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 08:17:49,428 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 08:17:49,428 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 08:17:49,459 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 08:17:49,694 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 08:17:49,694 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2782 ms
+2020-11-20 08:17:49,741 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 08:17:49,741 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 08:17:49,741 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 08:17:49,741 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 08:17:49,741 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 08:17:50,741 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 08:17:51,225 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 08:17:51,944 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 08:17:51,960 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 08:17:51,976 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 6.127 seconds (JVM running for 6.966)
+2020-11-20 08:21:25,029 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 08:21:25,034 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 08:21:25,043 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2020-11-20 08:21:42,804 [https-openssl-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 08:21:43,039 [https-openssl-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 08:25:29,851 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 13180 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 08:25:29,851 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 08:25:32,259 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 08:25:32,279 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 08:25:32,289 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 08:25:32,290 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 08:25:32,299 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 08:25:32,303 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 08:25:32,303 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 08:25:32,303 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 08:25:32,530 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 08:25:32,530 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2571 ms
+2020-11-20 08:25:32,571 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 08:25:32,579 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 08:25:32,579 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 08:25:32,579 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 08:25:32,579 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 08:25:33,513 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 08:25:34,044 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 08:25:34,739 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 08:25:34,763 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 08:25:34,768 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 5.629 seconds (JVM running for 6.402)
+2020-11-20 08:25:39,483 [https-openssl-nio-8080-exec-6] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 08:25:39,484 [https-openssl-nio-8080-exec-6] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 08:25:39,496 [https-openssl-nio-8080-exec-6] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2020-11-20 08:26:03,545 [https-openssl-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 08:26:03,758 [https-openssl-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 08:35:44,900 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 9060 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 08:35:44,909 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 08:35:47,349 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 08:35:47,361 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 08:35:47,374 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 08:35:47,374 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 08:35:47,388 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 08:35:47,389 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 08:35:47,389 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 08:35:47,394 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 08:35:47,594 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 08:35:47,594 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2593 ms
+2020-11-20 08:35:47,634 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 08:35:47,640 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 08:35:47,640 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 08:35:47,640 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 08:35:47,640 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 08:35:48,500 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 08:35:48,971 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 08:35:49,659 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 08:35:49,680 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 08:35:49,680 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 5.45 seconds (JVM running for 6.168)
+2020-11-20 08:35:58,426 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 08:35:58,427 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 08:35:58,439 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2020-11-20 08:36:33,553 [https-openssl-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 08:36:33,742 [https-openssl-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 08:36:47,010 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 8336 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 08:36:47,019 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 08:36:49,399 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 08:36:49,419 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 08:36:49,430 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 08:36:49,430 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 08:36:49,443 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 08:36:49,443 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 08:36:49,443 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 08:36:49,450 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 08:36:49,651 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 08:36:49,651 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2532 ms
+2020-11-20 08:36:49,711 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 08:36:49,719 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 08:36:49,719 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 08:36:49,719 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 08:36:49,719 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 08:36:50,541 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 08:36:51,010 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 08:36:51,709 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 08:36:51,722 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 08:36:51,730 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 5.401 seconds (JVM running for 6.121)
+2020-11-20 08:37:01,220 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 08:37:01,220 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 08:37:01,233 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2020-11-20 08:37:01,874 [https-openssl-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 08:37:02,085 [https-openssl-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 09:19:47,908 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 10208 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 09:19:47,923 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 09:19:50,408 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 09:19:50,424 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:19:50,440 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 09:19:50,440 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 09:19:50,455 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 09:19:50,455 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 09:19:50,455 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 09:19:50,455 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 09:19:50,659 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 09:19:50,659 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2626 ms
+2020-11-20 09:19:50,705 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 09:19:50,721 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 09:19:50,721 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 09:19:50,721 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 09:19:50,721 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 09:19:51,628 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 09:19:52,081 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:19:52,690 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 09:19:52,706 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 09:19:52,722 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 5.47 seconds (JVM running for 6.178)
+2020-11-20 09:20:04,705 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 09:20:04,705 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 09:20:04,720 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2020-11-20 09:21:11,538 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 7032 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 09:21:11,554 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 09:21:14,186 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 09:21:14,201 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:21:14,217 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 09:21:14,217 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 09:21:14,217 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 09:21:14,217 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 09:21:14,217 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 09:21:14,233 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 09:21:14,457 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 09:21:14,457 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2794 ms
+2020-11-20 09:21:14,504 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 09:21:14,504 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 09:21:14,504 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 09:21:14,504 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 09:21:14,504 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 09:21:15,411 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 09:21:15,941 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:21:16,680 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 09:21:16,700 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 09:21:16,705 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 5.916 seconds (JVM running for 6.987)
+2020-11-20 09:21:19,096 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 09:21:19,096 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 09:21:19,109 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2020-11-20 09:21:55,360 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 9788 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 09:21:55,360 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 09:21:57,861 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 09:21:57,876 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:21:57,892 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 09:21:57,892 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 09:21:57,908 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 09:21:57,908 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 09:21:57,908 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 09:21:57,908 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 09:21:58,126 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 09:21:58,126 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2657 ms
+2020-11-20 09:21:58,173 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 09:21:58,173 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 09:21:58,173 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 09:21:58,173 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 09:21:58,173 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 09:21:59,111 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 09:21:59,611 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:22:00,299 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 09:22:00,314 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 09:22:00,314 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 5.673 seconds (JVM running for 6.443)
+2020-11-20 09:22:02,567 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 09:22:02,568 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 09:22:02,583 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2020-11-20 09:35:17,979 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 3672 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 09:35:17,979 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 09:35:22,472 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 09:35:22,504 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:35:22,520 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 09:35:22,520 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 09:35:22,552 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 09:35:22,552 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 09:35:22,552 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 09:35:22,560 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 09:35:22,944 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 09:35:22,944 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4793 ms
+2020-11-20 09:35:23,008 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 09:35:23,024 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 09:35:23,024 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 09:35:23,024 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 09:35:23,024 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 09:35:24,462 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 09:35:25,431 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:35:26,546 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 09:35:26,578 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 09:35:26,578 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.741 seconds (JVM running for 10.938)
+2020-11-20 09:35:26,722 [https-openssl-nio-8080-exec-5] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 09:35:26,722 [https-openssl-nio-8080-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 09:35:26,738 [https-openssl-nio-8080-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-11-20 09:35:28,093 [https-openssl-nio-8080-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 09:35:28,453 [https-openssl-nio-8080-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 09:38:55,259 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 6608 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 09:38:55,259 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 09:38:59,291 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 09:38:59,322 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:38:59,338 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 09:38:59,338 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 09:38:59,354 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 09:38:59,354 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 09:38:59,354 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 09:38:59,369 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 09:38:59,713 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 09:38:59,713 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4298 ms
+2020-11-20 09:38:59,776 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 09:38:59,791 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 09:38:59,791 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 09:38:59,791 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 09:38:59,791 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 09:39:01,136 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 09:39:01,917 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:39:02,917 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 09:39:02,949 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 09:39:02,949 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.691 seconds (JVM running for 9.837)
+2020-11-20 09:39:10,188 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 09:39:10,188 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 09:39:10,204 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-11-20 09:39:11,420 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 09:39:11,724 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 09:39:31,476 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 5772 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 09:39:31,491 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 09:39:35,336 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 09:39:35,367 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:39:35,414 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 09:39:35,414 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 09:39:35,430 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 09:39:35,430 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 09:39:35,430 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 09:39:35,446 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 09:39:35,743 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 09:39:35,743 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4095 ms
+2020-11-20 09:39:35,821 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 09:39:35,821 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 09:39:35,821 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 09:39:35,821 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 09:39:35,821 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 09:39:37,274 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 09:39:38,025 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:39:39,134 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 09:39:39,166 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 09:39:39,166 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.675 seconds (JVM running for 9.791)
+2020-11-20 09:39:40,913 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 09:39:40,913 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 09:39:40,929 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-11-20 09:39:41,921 [https-openssl-nio-8080-exec-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 09:39:42,249 [https-openssl-nio-8080-exec-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 09:43:09,691 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 5388 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 09:43:09,691 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 09:43:13,958 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 09:43:13,973 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:43:13,989 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 09:43:14,005 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 09:43:14,020 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 09:43:14,020 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 09:43:14,020 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 09:43:14,020 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 09:43:14,395 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 09:43:14,395 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4517 ms
+2020-11-20 09:43:14,473 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 09:43:14,473 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 09:43:14,473 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 09:43:14,473 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 09:43:14,473 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 09:43:15,880 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 09:43:16,662 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:43:17,709 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 09:43:17,724 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 09:43:17,740 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.3 seconds (JVM running for 10.601)
+2020-11-20 09:43:21,015 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 09:43:21,015 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 09:43:21,039 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 09:43:22,289 [https-openssl-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 09:43:22,617 [https-openssl-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 09:47:55,459 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 4200 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 09:47:55,475 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 09:47:59,336 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 09:47:59,367 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:47:59,398 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 09:47:59,398 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 09:47:59,429 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 09:47:59,429 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 09:47:59,429 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 09:47:59,445 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 09:47:59,742 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 09:47:59,742 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4111 ms
+2020-11-20 09:47:59,804 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 09:47:59,820 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 09:47:59,820 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 09:47:59,820 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 09:47:59,820 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 09:48:01,195 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 09:48:01,977 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:48:03,024 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 09:48:03,040 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 09:48:03,055 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.596 seconds (JVM running for 9.76)
+2020-11-20 09:48:44,029 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 09:48:44,029 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 09:48:44,053 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 09:48:45,261 [https-openssl-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 09:48:45,597 [https-openssl-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 09:50:14,160 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 1188 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 09:50:14,160 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 09:50:18,208 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 09:50:18,224 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:50:18,255 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 09:50:18,255 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 09:50:18,271 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 09:50:18,271 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 09:50:18,271 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 09:50:18,271 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 09:50:18,661 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 09:50:18,661 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4345 ms
+2020-11-20 09:50:18,740 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 09:50:18,740 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 09:50:18,740 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 09:50:18,740 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 09:50:18,740 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 09:50:20,131 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 09:50:21,155 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 09:50:22,283 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 09:50:22,315 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 09:50:22,323 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.163 seconds (JVM running for 10.279)
+2020-11-20 09:50:22,467 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 09:50:22,467 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 09:50:22,491 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 09:50:23,642 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 09:50:23,946 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:04:37,815 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 816 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:04:37,815 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:04:41,816 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:04:41,848 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:04:41,863 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:04:41,863 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:04:41,926 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:04:41,926 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:04:41,926 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:04:41,926 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:04:42,238 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:04:42,238 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4251 ms
+2020-11-20 10:04:42,301 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:04:42,317 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:04:42,317 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:04:42,317 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:04:42,317 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:04:43,817 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:04:44,614 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:04:45,856 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:04:45,888 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:04:45,896 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.097 seconds (JVM running for 10.272)
+2020-11-20 10:04:46,718 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:04:46,718 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:04:46,742 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 10:04:47,895 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:04:48,239 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:06:40,464 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 11920 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:06:40,464 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:06:44,434 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:06:44,449 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:06:44,465 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:06:44,465 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:06:44,512 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:06:44,512 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:06:44,512 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:06:44,527 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:06:44,809 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:06:44,809 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4142 ms
+2020-11-20 10:06:44,887 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:06:44,887 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:06:44,887 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:06:44,887 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:06:44,887 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:06:46,340 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:06:47,184 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:06:48,232 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:06:48,278 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:06:48,278 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.862 seconds (JVM running for 10.039)
+2020-11-20 10:06:50,438 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:06:50,438 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:06:50,454 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-11-20 10:06:51,638 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:06:51,934 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:07:17,219 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 13076 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:07:17,235 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:07:21,830 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:07:21,861 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:07:21,877 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:07:21,877 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:07:21,893 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:07:21,893 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:07:21,893 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:07:21,908 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:07:22,190 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:07:22,190 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4736 ms
+2020-11-20 10:07:22,252 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:07:22,268 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:07:22,268 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:07:22,268 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:07:22,268 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:07:23,659 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:07:24,472 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:07:25,613 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:07:25,644 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:07:25,659 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.628 seconds (JVM running for 10.933)
+2020-11-20 10:07:31,193 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:07:31,193 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:07:31,217 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 10:07:32,354 [https-openssl-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:07:32,690 [https-openssl-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:08:40,929 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 2100 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:08:40,929 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:08:44,899 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:08:44,946 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:08:44,962 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:08:44,962 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:08:44,977 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:08:44,977 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:08:44,977 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:08:44,993 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:08:45,258 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:08:45,274 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4189 ms
+2020-11-20 10:08:45,352 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:08:45,352 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:08:45,352 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:08:45,352 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:08:45,352 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:08:46,696 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:08:47,462 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:08:48,681 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:08:48,713 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:08:48,713 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.8 seconds (JVM running for 9.949)
+2020-11-20 10:08:54,996 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:08:54,996 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:08:55,020 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 10:08:56,156 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:08:56,508 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:14:53,330 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 7356 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:14:53,330 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:14:57,347 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:14:57,378 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:14:57,393 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:14:57,393 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:14:57,440 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:14:57,440 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:14:57,440 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:14:57,440 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:14:57,753 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:14:57,753 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4236 ms
+2020-11-20 10:14:57,831 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:14:57,831 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:14:57,847 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:14:57,847 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:14:57,847 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:14:59,222 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:15:00,004 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:15:01,020 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:15:01,051 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:15:01,051 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.753 seconds (JVM running for 9.955)
+2020-11-20 10:15:10,858 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:15:10,866 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:15:10,882 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-11-20 10:15:12,032 [https-openssl-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:15:12,352 [https-openssl-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:19:23,961 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 13452 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:19:23,961 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:19:27,775 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:19:27,806 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:19:27,822 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:19:27,822 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:19:27,838 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:19:27,838 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:19:27,838 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:19:27,853 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:19:28,181 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:19:28,181 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4064 ms
+2020-11-20 10:19:28,259 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:19:28,275 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:19:28,275 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:19:28,275 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:19:28,275 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:19:29,713 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:19:30,510 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:19:31,557 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:19:31,604 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:19:31,604 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.659 seconds (JVM running for 9.836)
+2020-11-20 10:19:34,406 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:19:34,406 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:19:34,430 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 10:19:35,665 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:19:36,025 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:21:08,720 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 11396 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:21:08,736 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:21:12,659 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:21:12,690 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:21:12,706 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:21:12,706 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:21:12,721 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:21:12,721 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:21:12,721 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:21:12,737 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:21:13,049 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:21:13,049 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4157 ms
+2020-11-20 10:21:13,112 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:21:13,128 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:21:13,128 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:21:13,128 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:21:13,128 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:21:14,503 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:21:15,284 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:21:16,425 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:21:16,457 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:21:16,457 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.878 seconds (JVM running for 10.095)
+2020-11-20 10:21:18,414 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:21:18,414 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:21:18,438 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 10:21:19,766 [https-openssl-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:21:20,087 [https-openssl-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:26:11,972 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 12356 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:26:11,988 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:26:16,474 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:26:16,506 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:26:16,522 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:26:16,522 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:26:16,570 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:26:16,570 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:26:16,570 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:26:16,578 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:26:16,946 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:26:16,946 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4786 ms
+2020-11-20 10:26:17,026 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:26:17,042 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:26:17,042 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:26:17,042 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:26:17,042 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:26:18,595 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:26:19,419 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:26:20,534 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:26:20,566 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:26:20,574 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.618 seconds (JVM running for 10.81)
+2020-11-20 10:26:20,703 [https-openssl-nio-8080-exec-9] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:26:20,703 [https-openssl-nio-8080-exec-9] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:26:20,751 [https-openssl-nio-8080-exec-9] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 48 ms
+2020-11-20 10:26:22,142 [https-openssl-nio-8080-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:26:22,489 [https-openssl-nio-8080-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:29:28,696 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 11588 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:29:28,700 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:29:33,502 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:29:33,524 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:29:33,540 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:29:33,540 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:29:33,571 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:29:33,571 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:29:33,571 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:29:33,587 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:29:33,888 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:29:33,888 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4988 ms
+2020-11-20 10:29:33,957 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:29:33,973 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:29:33,973 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:29:33,973 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:29:33,973 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:29:35,376 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:29:36,207 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:29:37,437 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:29:37,468 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:29:37,475 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 10.124 seconds (JVM running for 11.67)
+2020-11-20 10:29:41,431 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:29:41,431 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:29:41,471 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 40 ms
+2020-11-20 10:29:42,611 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:29:42,947 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:34:12,723 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 3340 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:34:12,723 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:34:16,614 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:34:16,646 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:34:16,661 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:34:16,661 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:34:16,692 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:34:16,692 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:34:16,692 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:34:16,692 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:34:17,052 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:34:17,052 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4173 ms
+2020-11-20 10:34:17,130 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:34:17,146 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:34:17,146 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:34:17,146 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:34:17,146 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:34:18,646 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:34:19,428 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:34:20,381 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:34:20,412 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:34:20,412 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.69 seconds (JVM running for 9.837)
+2020-11-20 10:34:32,184 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:34:32,184 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:34:32,200 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-11-20 10:34:33,426 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:34:33,715 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:35:18,576 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 10736 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:35:18,576 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:35:23,046 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:35:23,078 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:35:23,093 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:35:23,093 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:35:23,125 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:35:23,125 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:35:23,125 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:35:23,125 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:35:23,468 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:35:23,468 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4704 ms
+2020-11-20 10:35:23,547 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:35:23,562 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:35:23,562 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:35:23,562 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:35:23,562 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:35:24,875 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:35:25,750 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:35:26,751 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:35:26,782 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:35:26,798 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.285 seconds (JVM running for 10.446)
+2020-11-20 10:35:31,832 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:35:31,832 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:35:31,856 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 10:35:32,988 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:35:33,414 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:36:23,095 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 9836 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:36:23,103 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:36:27,511 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:36:27,559 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:36:27,574 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:36:27,574 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:36:27,590 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:36:27,605 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:36:27,605 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:36:27,605 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:36:27,887 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:36:27,887 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4608 ms
+2020-11-20 10:36:27,933 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:36:27,949 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:36:27,949 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:36:27,949 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:36:27,949 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:36:29,324 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:36:30,106 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:36:31,106 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:36:31,138 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:36:31,146 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.197 seconds (JVM running for 10.427)
+2020-11-20 10:36:32,303 [https-openssl-nio-8080-exec-6] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:36:32,303 [https-openssl-nio-8080-exec-6] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:36:32,327 [https-openssl-nio-8080-exec-6] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 10:36:33,463 [https-openssl-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:36:33,824 [https-openssl-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:40:49,699 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 12400 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:40:49,699 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:40:53,637 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:40:53,653 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:40:53,684 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:40:53,684 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:40:53,716 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:40:53,716 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:40:53,716 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:40:53,731 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:40:54,044 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:40:54,044 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4173 ms
+2020-11-20 10:40:54,138 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:40:54,138 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:40:54,138 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:40:54,138 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:40:54,138 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:40:55,716 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:40:56,591 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:40:57,670 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:40:57,717 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:40:57,717 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.081 seconds (JVM running for 10.255)
+2020-11-20 10:41:00,844 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:41:00,844 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:41:00,868 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-11-20 10:41:02,132 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:41:02,444 [https-openssl-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:50:25,799 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 10660 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:50:25,815 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:50:29,613 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:50:29,644 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:50:29,660 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:50:29,660 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:50:29,675 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:50:29,675 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:50:29,675 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:50:29,691 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:50:29,988 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:50:29,988 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4001 ms
+2020-11-20 10:50:30,051 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:50:30,066 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:50:30,066 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:50:30,066 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:50:30,066 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:50:31,457 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:50:32,223 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:50:33,286 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:50:33,317 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:50:33,317 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.518 seconds (JVM running for 9.653)
+2020-11-20 10:51:21,892 [https-openssl-nio-8080-exec-5] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:51:21,892 [https-openssl-nio-8080-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:51:21,909 [https-openssl-nio-8080-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+2020-11-20 10:51:22,909 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:51:23,277 [https-openssl-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:51:33,681 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 12348 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:51:33,681 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:51:37,995 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:51:38,010 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:51:38,026 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:51:38,026 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:51:38,073 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:51:38,073 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:51:38,073 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:51:38,073 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:51:38,401 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:51:38,401 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4533 ms
+2020-11-20 10:51:38,464 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:51:38,479 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:51:38,479 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:51:38,479 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:51:38,479 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:51:39,933 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:51:40,730 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:51:41,808 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:51:41,840 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:51:41,855 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.331 seconds (JVM running for 10.652)
+2020-11-20 10:52:39,732 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 5364 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:52:39,748 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:52:43,891 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:52:43,939 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:52:43,962 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:52:43,962 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:52:43,987 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:52:43,987 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:52:43,987 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:52:43,995 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:52:44,347 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:52:44,355 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4451 ms
+2020-11-20 10:52:44,419 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:52:44,427 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:52:44,427 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:52:44,427 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:52:44,427 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:52:46,159 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:52:46,941 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:52:48,004 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:52:48,035 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:52:48,050 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 9.404 seconds (JVM running for 10.563)
+2020-11-20 10:52:52,449 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:52:52,449 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:52:52,489 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 40 ms
+2020-11-20 10:53:11,633 [https-openssl-nio-8080-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:53:11,951 [https-openssl-nio-8080-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:55:33,816 [main] INFO  com.shortrent.ShortRentApplication - Starting ShortRentApplication on LAPTOP-RFRAAI6A with PID 5448 (D:\17201219-idea\shortrent\target\classes started by 施增辉 in D:\17201219-idea\shortrent)
+2020-11-20 10:55:33,816 [main] INFO  com.shortrent.ShortRentApplication - No active profile set, falling back to default profiles: default
+2020-11-20 10:55:37,723 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-20 10:55:37,754 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:55:37,770 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 10:55:37,770 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-11-20 10:55:37,786 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-11-20 10:55:37,786 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-20 10:55:37,786 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-20 10:55:37,786 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-11-20 10:55:38,083 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 10:55:38,083 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4095 ms
+2020-11-20 10:55:38,130 [main] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-11-20 10:55:38,145 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-20 10:55:38,145 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-20 10:55:38,145 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-11-20 10:55:38,145 [main] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-20 10:55:39,505 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 10:55:40,240 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-openssl-nio-8080"]
+2020-11-20 10:55:41,240 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-11-20 10:55:41,271 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path ''
+2020-11-20 10:55:41,287 [main] INFO  com.shortrent.ShortRentApplication - Started ShortRentApplication in 8.472 seconds (JVM running for 9.661)
+2020-11-20 10:55:46,234 [https-openssl-nio-8080-exec-7] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 10:55:46,234 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 10:55:46,255 [https-openssl-nio-8080-exec-7] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 21 ms
+2020-11-20 10:55:47,344 [https-openssl-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-20 10:55:47,680 [https-openssl-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-20 10:59:11,091 [https-openssl-nio-8080-exec-7] INFO  com.shortrent.rest.MailRestController - 发送成功!
+2020-11-20 11:00:51,121 [https-openssl-nio-8080-exec-7] INFO  com.shortrent.rest.MailRestController - 发送成功!
+2020-11-20 11:01:11,152 [https-openssl-nio-8080-exec-10] INFO  com.shortrent.rest.MailRestController - 发送成功!
+2020-11-20 11:02:05,247 [https-openssl-nio-8080-exec-9] INFO  com.shortrent.rest.MailRestController - 发送成功!

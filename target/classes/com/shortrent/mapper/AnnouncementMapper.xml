@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.shortrent.dao.AnnouncementDao">   
+    <resultMap id="BaseResultMap10" type="com.shortrent.pojo.Announcement">  
+        <id column="anno_id" property="anno_id" />  
+        <result column="message" property="message" />  
+        <result column="anno_time" property="anno_time"/>         
+    </resultMap>   	
+  	
+  	<select id="getAllAnnouncements" resultType="Map">
+  		select * from announcement order by anno_id desc limit #{start}, #{end}
+  	</select>
+  	
+  	<insert id="addAnnouncement" parameterType="com.shortrent.pojo.Announcement">
+  		insert into announcement(message,anno_time)
+  		values(#{message},#{anno_time})
+  	</insert>
+  	
+  	<select id="getCount" resultType="Integer">
+  		select count(anno_id) from announcement;
+  	</select> 	
+  	
+</mapper> 

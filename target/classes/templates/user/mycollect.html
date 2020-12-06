@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的收藏</title>
+<link rel="stylesheet" href="css/user/mycollect.css" />
+</head>
+<body>
+    
+    <input type="text" id="i1" th:value="${session.user_id}" hidden="true"><br />
+
+    <div class="t">
+        <table>
+        </table>
+    </div>
+	
+	<div class="btu">
+        <button id="btu_up" class="btu1">&lt;</button>
+        &nbsp;<span id="span1">1</span><span>/</span><span id="span2">-</span>&nbsp;
+        <button id="btu_down" class="btu1">&gt;</button>
+    </div>
+    
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+	    var page
+
+	    $(document).ready(function () {
+	        find();
+	    });    
+		
+	    $(document).ready(function () {
+            $.ajax({
+                type: "get",
+                url: "https://localhost:8080/api/v1/collect/getcount/" + $("#i1").val(),
+                success: function (response) {
+                	if(response % 10==0 && response!=0)
+                		page = parseInt(response / 10);
+                	else
+                    	page = parseInt(response / 10) + 1
+                    $("#span2").text(page);
+                },
+                error: function (response) {
+                    alert("查询失败")
+                }
+            });
+        });
+
+    	$(document).ready(function () {
+            $("#btu_down").click(function (e) {
+                if (parseInt($("#span1").text()) >= page) {
+                    alert("这是最后一页")
+                } else {
+                    $("#span1").text(parseInt($("#span1").text()) + 1);
+                    find();
+                }
+            });
+        });
+    	
+    	$(document).ready(function () {
+            $("#btu_up").click(function (e) {
+                if (parseInt($("#span1").text()) <= 1) {
+                    alert("这是第一页")
+                } else {
+                    $("#span1").text(parseInt($("#span1").text()) - 1);
+                    find();
+                }
+            });
+        });
+
+        function find(){
+	        let str = `<tr><th>房屋编号</th><th>收藏时间</th><th>操作</th></tr>`
+	        $.ajax({
+	            type: "get",
+	            url: "https://localhost:8080/api/v1/collect/" + $("#i1").val() + "?start=" + ($("#span1").text() - 1) * 10,
+	            success: function (response) {
+	                let collects = response;
+	                if (collects.length == 0) {
+	                    str += `<tr><td colspan="3">暂无收藏</td></tr>`
+	                } else {
+	                	collects.forEach(collect => {
+	                        str += `<tr><td>${collect.house_id}</td><td>${collect.collecttime}</td>
+	                        <td width="25%">
+	                        <a href="#" id="btu_o1">查看</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	                        <a href="#" id="btu_o2">移出收藏</a></td></tr>`;
+	                    });
+	                }
+	                $("table").html(str);
+	            }
+	        });
+	    }
+
+
+	    $(document).ready(function(){
+            $("Table").on('click','#btu_o2',function(){
+                var currentRow=$(this).closest("tr"); 
+                var col1=currentRow.find("td:eq(0)").text();
+                $.ajax({
+                    type: "delete",
+                    url: "https://127.0.0.1:8080/api/v1/collect/delete",
+                    data: {
+                        "user_id": $("#i1").val(),
+                        "house_id": col1
+                    },
+                    success : function(response){
+						alert("删除成功")
+						find();
+						//location.reload();
+                    },
+                    error : function(response){
+                    	alert("删除失败")
+                    }
+                });
+            });
+        });
+	    
+	    $(document).ready(function(){
+            $("Table").on('click','#btu_o1',function(){
+                var currentRow=$(this).closest("tr"); 
+                var col1=currentRow.find("td:eq(0)").text();
+                window.location.href="houseDetail?house_id="+col1;
+            });
+        });
+	    
+	</script>
+</body>
+</html>

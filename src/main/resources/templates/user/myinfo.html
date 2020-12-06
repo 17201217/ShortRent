@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>信息修改</title>
+<link rel="stylesheet" href="css/user/myinfo.css" />
+</head>
+<body>
+
+    <div class="upd">
+        <input type="text" id="i1" th:value="${session.user_id}" hidden="true"><br />
+        <p><span class="span2">账号: </span><span class="spanid" th:text="${session.user_id}"></span></p>
+        
+
+        <span class="span2">密码：</span><input type="password" id="i2" class="inp" disabled><a href="/changepwd" class="a1">修改</a><br />
+        <span class="span2">邮箱：</span><input type="text" id="i3" class="inp"><br />
+        <span class="span2">姓名：</span><input type="text" id="i4" class="inp"><br /> 
+        <span class="span2">手机：</span><input type="text" id="i6" class="inp"><br /> 
+
+        <div class="div3">
+            <input id="item1" type="radio" name="sex" value="男" checked>
+            <label for="item1"></label>
+            <span class="span2">男</span>
+        </div>
+        <div class="div3">
+            <input id="item2" type="radio" name="sex" value="女">
+            <label for="item2"></label>
+            <span class="span2">女</span>
+        </div>
+
+        <div class="divbtu">
+            <button id="btu" class="btu">修改</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+		$(document).ready(function() {
+			$.ajax({
+				type : "get",
+				url : "https://localhost:8080/api/v1/user/" + $("#i1").val(),
+				success : function(response) {
+					$("#i2").val(response.user_password);
+					$("#i3").val(response.user_email);
+					$("#i4").val(response.user_name);
+					if(response.sex == '女'){
+						$("input[type=radio][name=sex][value='女']").attr("checked",true);
+					}
+					$("#i6").val(response.user_tel);
+				},
+				error : function(response) {
+					alert("查询失败")
+				}
+			});
+		});
+	
+        $(document).ready(function () {
+            $("#btu").click(function (e) {
+                var reg = /^[0-9]*@.*com$/;               
+                var pattern = new RegExp(reg);   
+                if($("#i2").val().trim()=="" || $("#i3").val().trim()=="" || 
+                    $("#i4").val().trim()=="" || $("#i6").val().trim()==""){
+                    alert("请填写所有输入框")
+                }else if(!pattern.test($("#i3").val())){
+                    alert("请填写正确的邮箱")
+                }
+                else{
+                    $.ajax({
+                        type: "post",
+                        url: "https://localhost:8080/api/v1/user/update",
+                        data: JSON.stringify({
+                            user_id: $("#i1").val(),
+                            user_password: $("#i2").val(),
+                            user_email: $("#i3").val(),
+                            user_name: $("#i4").val(),
+                            sex: $("input[type='radio']:checked").val(),
+                            user_tel: $("#i6").val(),
+                            category: 0,
+                            islock: 0
+                        }),
+                        dataType: 'json',
+                        contentType: 'application/json; charset=UTF-8',
+                        success : function(response){
+                            alert("修改成功")
+                        },
+                        error : function(response){
+                            alert("修改失败")
+                        }
+                    });
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>

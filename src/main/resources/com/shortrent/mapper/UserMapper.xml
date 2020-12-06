@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.shortrent.dao.UserDao">  
+<!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->  
+    <resultMap id="BaseResultMap" type="com.shortrent.pojo.User">
+        <id column="user_id" property="user_id" jdbcType="VARCHAR" />
+        <result column="user_password" property="user_password" jdbcType="VARCHAR" />
+        <result column="user_email" property="user_email" jdbcType="VARCHAR" />
+        <result column="user_name" property="user_name" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="VARCHAR" />
+        <result column="user_tel" property="user_tel" jdbcType="VARCHAR" />
+        <result column="category" property="category" jdbcType="INTEGER" />
+        <result column="islock" property="islock" jdbcType="INTEGER" />
+    </resultMap>  
+    
+    <!-- 查询单条记录 -->  
+    <select id="findUserById" parameterType="String" resultMap="BaseResultMap">  
+        select * from user where user_id = #{userId}  
+    </select>
+
+	<!-- 根据手机号查询单条记录 -->
+	<select id="findUserByPhone" parameterType="String" resultMap="BaseResultMap">
+		select * from user where user_tel = #{user_tel}
+	</select>
+
+	<!-- 根据邮箱查询单条记录 -->
+	<select id="findUserByEmail" parameterType="String" resultMap="BaseResultMap">
+		select * from user where user_email = #{user_email}
+	</select>
+
+    <!-- 模糊查询 -->
+    <select id="findUserByIdlike" parameterType="String" resultType="com.shortrent.pojo.User">  
+        select * from user where (user_id LIKE CONCAT('%', #{str}, '%') or user_name LIKE CONCAT('%', #{str}, '%')) and category between 0 and 1
+    </select> 
+    
+    <!-- 查询所有user，分页 -->
+    <select id="getAllUsers" parameterType="Map" resultType="com.shortrent.pojo.User">
+  		select * from user where category between 0 and 1 order by user_id limit #{start}, #{end}
+  	</select>
+  	
+  	<!-- 查询所有user，不分页 -->
+    <select id="AllUsers" parameterType="Map" resultType="com.shortrent.pojo.User">
+  		select * from user where category between 0 and 1
+  	</select>
+  	
+  	<!-- 查询所有user数量 -->
+  	<select id="getCount" resultType="Integer">
+  		select count(user_id) from user where category between 0 and 1;
+  	</select>
+  	
+    <insert id="add" parameterType="com.shortrent.pojo.User">
+		insert into user values 
+		(#{user_id,jdbcType=VARCHAR}, 
+		#{user_password,jdbcType=VARCHAR},
+		#{user_email,jdbcType=VARCHAR},
+		#{user_name,jdbcType=VARCHAR},
+		#{sex,jdbcType=VARCHAR},
+		#{user_tel,jdbcType=VARCHAR},
+		#{category,jdbcType=INTEGER},
+		#{islock,jdbcType=INTEGER})
+	</insert>
+    
+    <update id="update" parameterType="com.shortrent.pojo.User">
+  		update user set
+  		<if test="user_tel!=null">user_tel = #{user_tel},</if>
+  		<if test="user_email!=null">user_email=#{user_email},</if>
+  		<if test="user_name!=null">user_name=#{user_name},</if>
+  		<if test="sex!=null">sex=#{sex},</if>
+  		<if test="user_password!=null">user_password = #{user_password}</if>
+  		where user_id = #{user_id}
+	</update>
+	
+	<update id="updpassword" parameterType="String">
+  		update user set user_password = '111111' where user_id = #{user_id}
+	</update>
+    
+    <update id="block" parameterType="String">
+  		update user set islock = 1 where user_id = #{user_id}
+	</update>
+	
+    <update id="unblock" parameterType="String">
+  		update user set islock = 0 where user_id = #{user_id}
+	</update>
+    
+</mapper> 

@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+
+.btu1 {
+	border: 1px solid #AFEEEE;
+	width: 250px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.btu2 {
+	border: 1px solid #AFEEEE;
+	width: 200px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+button:hover {
+	background-color: #AFEEEE;
+}
+
+.contain {
+	width: 70%;
+	margin-left: 15%;
+}
+
+.photo {
+	width: 700px;
+	height: 450px;
+}
+
+.right {
+	float: left;
+	margin-left: 50px;
+}
+
+.image {
+	width: 700px;
+	height: 450px;
+}
+
+.info {
+	width: 250px;
+}
+
+.op {
+	margin-top: 50px;
+}
+
+.collect {
+	width: 50px;
+	height: 40px;
+	border: 1px solid #AFEEEE;
+	border-radius: 8px;
+	margin-top: 20px;
+}
+
+.reserve {
+	border: 1px solid #AFEEEE;
+	width: 150px;
+	height: 30px;
+	border-radius: 5px;
+	margin-left: 20%;
+}
+
+.userinfo {
+	width: 700px;
+	height: 100px;
+	margin-top: 20px;
+}
+
+.left {
+	top: 30px;
+	float: left;
+}
+
+.back {
+	border: 1px solid #AFEEEE;
+	width: 35px;
+	height: 40px;
+	border-radius: 10px;
+	margin-left: 10%;
+}
+
+table {
+	width: 80%;
+}
+
+tr {
+	height: 25px;
+}

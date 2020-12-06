@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/landlord/llcss.css" />
+    <title>房屋列表</title>
+</head>
+
+<body>
+    <input type="text" id="i1" th:value="${session.ll_id}" hidden="true"><br />
+
+    <div class="t">
+        <table>
+        </table>
+    </div>
+
+    <div class="btu">
+        <button id="btu_up" class="btu1">&lt;</button>
+        &nbsp;<span id="span1">1</span><span>/</span><span id="span2">-</span>&nbsp;
+        <button id="btu_down" class="btu1">&gt;</button>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        var page
+        $(document).ready(function () {
+            let str = `<tr id="s"><th>房屋编号</th><th>房屋名称</th><th>房屋类型</th>
+                <th>房屋大小</th><th>房屋价格</th><th>房屋图片</th><th>是否发布</th><th>是否出租</th><th>是否预约</th><th>房屋位置</th>
+                </tr>`
+            $.ajax({
+                type: "get",
+                /*  url: "https://localhost:8080/api/v1/house/" + $("#i1").val(), */
+                url: "https://localhost:8080/api/v1/house/allhouseuserid",
+                data: {
+                    "user_id": $("#i1").val(),
+                },
+                success: function (response) {
+                    let houses = response;
+                    if (houses.length == 0) {
+                        str += `<tr><td colspan="10">暂无未发布的房屋信息</td></tr>`
+                    } else {
+                        houses.forEach(house => {
+                            var str1 = house.online;
+                            var str2 = house.status;
+                            var str3 = house.flag;
+                            if (str1 == 1) {
+                                str1 = "已发布";
+                            } else {
+                                str1 = "未发布";
+                            }
+                            if (str2 == 1) {
+                                str2 = "已出租";
+                            } else {
+                                str2 = "未出租";
+                            }
+                            if (str3 == 1) {
+                                str3 = "已预约"
+                            } else {
+                                str3 = "未预约"
+                            }
+                            console.log(str1);
+                            str += `<tr>
+                                <td>${house.house_id}</td>
+                                <td>${house.house_name}</td>
+                                <td>${house.type}</td>
+                                <td>${house.size}</td>
+                                <td>${house.house_price}</td>
+                                <td><img src="img/rent-img/${house.photo}"/></td>
+                                <td>${str1}</td>
+                                <td>${str2}</td>
+                                <td>${str3}</td>
+                                <td>${house.locate}</td>
+                               
+                                
+                                `;
+                        });
+                    }
+                    $("table").html(str);
+                }
+            });
+        });
+
+        $("#div3btu").click(function(){
+        	window.open("/aduserm?user="+$("#div3inp").val(),"_blank");
+        });
+        
+        
+        $(document).ready(function () {
+            $("#btu_down").click(function (e) {
+                if (parseInt($("#span1").text()) >= page) {
+                    alert("这是最后一页")
+                } else {
+                    $("#span1").text(parseInt($("#span1").text()) + 1);
+                    var curpage_down = $("#span1").text();
+                    let str = `<tr id="s"><th>房屋编号</th><th>房屋名称</th><th>房屋类型</th>
+                    <th>房屋大小</th><th>房屋价格</th><th>房屋图片</th><th>是否发布</th><th>是否出租</th><th>是否预约</th><th>房屋位置</th>
+                    </tr>`
+                    $.ajax({
+                        type: "get",
+                        /*  url: "https://localhost:8080/api/v1/house/" + $("#i1").val(), */
+                        url: "https://localhost:8080/api/v1/house/allhouseuserid",
+                        data: {
+                            "user_id": $("#i1").val(),
+                            "start": (curpage_down - 1) * 10
+                        },
+                        success: function (response) {
+                            let houses = response;
+                            if (houses.length == 0) {
+                                str += `<tr><td colspan="10">暂无未发布的房屋信息</td></tr>`
+                            } else {
+                                houses.forEach(house => {
+                                    var str1 = house.online;
+                                    var str2 = house.status;
+                                    var str3 = house.flag;
+                                    if (str1 == 1) {
+                                        str1 = "已发布";
+                                    } else {
+                                        str1 = "未发布";
+                                    }
+                                    if (str2 == 1) {
+                                        str2 = "已出租";
+                                    } else {
+                                        str2 = "未出租";
+                                    }
+                                    if (str3 == 1) {
+                                        str3 = "已预约"
+                                    } else {
+                                        str3 = "未预约"
+                                    }
+                                    console.log(str1);
+                                    str += `<tr>
+                                    <td>${house.house_id}</td>
+                                    <td>${house.house_name}</td>
+                                    <td>${house.type}</td>
+                                    <td>${house.size}</td>
+                                    <td>${house.house_price}</td>
+                                    <td><img src="img/rent-img/${house.photo}"/></td>
+                                    <td>${str1}</td>
+                                    <td>${str2}</td>
+                                    <td>${str3}</td>
+                                    <td>${house.locate}</td>                                                                   
+                                    `;
+                                });
+                            }
+                            $("table").html(str);
+                        }
+                    });
+                }
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#btu_up").click(function (e) {
+                if (parseInt($("#span1").text()) <= 1) {
+                    alert("这是第一页")
+                } else {
+                    $("#span1").text(parseInt($("#span1").text()) - 1);
+                    var curpage_up = $("#span1").text();
+                    let str = `<tr id="s"><th>房屋编号</th><th>房屋名称</th><th>房屋类型</th>
+                <th>房屋大小</th><th>房屋价格</th><th>房屋图片</th><th>是否发布</th><th>是否出租</th><th>是否预约</th><th>房屋位置</th>
+                </tr>`
+                    $.ajax({
+                        type: "get",
+                        /*  url: "https://localhost:8080/api/v1/house/" + $("#i1").val(), */
+                        url: "https://localhost:8080/api/v1/house/allhouseuserid",
+                        data: {
+                            "user_id": $("#i1").val(),
+                            "start": (curpage_up - 1) * 10
+                        },
+                        success: function (response) {
+                            let houses = response;
+                            if (houses.length == 0) {
+                                str += `<tr><td colspan="10">暂无未发布的房屋信息</td></tr>`
+                            } else {
+                                houses.forEach(house => {
+                                    var str1 = house.online;
+                                    var str2 = house.status;
+                                    var str3 = house.flag;
+                                    if (str1 == 1) {
+                                        str1 = "已发布";
+                                    } else {
+                                        str1 = "未发布";
+                                    }
+                                    if (str2 == 1) {
+                                        str2 = "已出租";
+                                    } else {
+                                        str2 = "未出租";
+                                    }
+                                    if (str3 == 1) {
+                                        str3 = "已预约"
+                                    } else {
+                                        str3 = "未预约"
+                                    }
+                                    console.log(str1);
+                                    str += `<tr>
+                                <td>${house.house_id}</td>
+                                <td>${house.house_name}</td>
+                                <td>${house.type}</td>
+                                <td>${house.size}</td>
+                                <td>${house.house_price}</td>
+                                <td><img src="img/rent-img/${house.photo}"/></td>
+                                <td>${str1}</td>
+                                <td>${str2}</td>
+                                <td>${str3}</td>
+                                <td>${house.locate}</td>
+                               
+                                
+                                `;
+                                });
+                            }
+                            $("table").html(str);
+                        }
+                    });
+                }
+            });
+        });
+
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "get",
+                url: "https://localhost:8080/api/v1/house/getcount3",
+                data: {
+                    "user_id": $("#i1").val()
+                },
+                success: function (response) {
+                	if(response % 10==0 && response!=0)
+                		page = parseInt(response / 10);
+                	else
+                    	page = parseInt(response / 10) + 1
+                    $("#span2").text(page);
+                },
+                error: function (response) {
+                    alert("查询失败")
+                }
+            });
+        });
+
+
+
+        
+        $(document).ready(function(){
+            $("Table").on('click','img',function(){
+                var currentRow=$(this).closest("tr"); 
+                var col1=currentRow.find("td:eq(5)").html();
+                $("#ifr").attr("src",$(col1).attr("src"))
+                
+                //window.open("/photobyid?src="+$(col1).attr("src"),"_blank");
+                window.open ("/photobyid?src="+$(col1).attr("src"),"newwindow",
+                		"height=465, width=825, top=100, left=120, toolbar=no, menubar=no, resizable=no")
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

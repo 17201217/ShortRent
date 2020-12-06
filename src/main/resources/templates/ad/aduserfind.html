@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>查询</title>
+<link rel="stylesheet" href="css/ad/aduserfind.css" />
+</head>
+<body>
+    <div>
+        <div class="top">
+            <img src="images/common/uflogo.PNG" alt="logo" class="logo"><br />
+            <input type="text" class="inp" id="inp" placeholder="请输入账号或姓名进行查询">
+            <button class="btu" id="sub">查询</button>
+        </div>
+        <br />
+        <div class="bot">
+            <table>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#inp").focus();
+            $("#inp").keyup(function(event){
+                if(event.keyCode == 13){
+                    find();
+                }
+            });
+            $("#sub").click(function(){
+                find();
+            });
+        });
+
+        function find() {
+	        let str = `<tr><th>用户账号</th><th>用户密码</th><th>用户邮箱</th><th>用户姓名</th><th>用户性别</th>
+	        				<th>用户手机</th><th>用户类别</th><th>用户状态</th><th>操作</th></tr>`
+	        $.ajax({
+	            type: "get",
+	            url: "https://localhost:8080/api/v1/user/like?str=" + $("#inp").val(),
+	            success: function (response) {
+	                let users = response;
+	                if (users.length == 0) {
+	                    str += `<tr><td colspan="9">暂无用户</td></tr>`
+	                } else {
+	                	users.forEach(user => {
+                            let cat = user.category == 0 ? "用户" : "商户";
+	                	    let isc = user.islock == 0 ? "正常" : "封禁";
+	                        str += `<tr><td>${user.user_id}</td><td>${user.user_password}</td><td>${user.user_email}</td>
+	                                <td>${user.user_name}</td><td>${user.sex}</td><td>${user.user_tel}</td>
+	                                <td>${cat}</td><td>${isc}</td>
+	                                <td width="23%">
+                                    <a href="#" id="btu_o0">封禁</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	                                <a href="#" id="btu_o1">解封</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	                                <a href="#" id="btu_o2">重置密码</a>
+                                    </td></tr>`;
+	                    });
+	                }
+	                $("table").html(str);
+	            }
+	        });
+        }
+        $(document).ready(function(){
+            $("Table").on('click','#btu_o0',function(){
+                var currentRow=$(this).closest("tr");
+                var col1=currentRow.find("td:eq(0)").text();
+                $.ajax({
+                    type: "get",
+                    url: "https://localhost:8080/api/v1/user/block?user_id=" + col1,
+                    success: function (response) {
+                    	alert("封禁成功")
+                    	find();
+                    },
+                    error : function(response){
+                        alert("该用户正处于被封禁状态")
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("Table").on('click','#btu_o1',function(){
+                var currentRow=$(this).closest("tr");
+                var col1=currentRow.find("td:eq(0)").text();
+                $.ajax({
+                    type: "get",
+                    url: "https://localhost:8080/api/v1/user/unblock?user_id=" + col1,
+                    success: function (response) {
+                    	alert("解封成功")
+                    	find();
+                    },
+                    error : function(response){
+                        alert("该用户正处于未被封禁状态")
+                    }
+                });
+            });
+        });
+
+	    $(document).ready(function(){
+            $("Table").on('click','#btu_o2',function(){
+                var currentRow=$(this).closest("tr");
+                var col1=currentRow.find("td:eq(0)").text();
+                $.ajax({
+                    type: "get",
+                    url: "https://localhost:8080/api/v1/user/updpassword?user_id=" + col1,
+                    success: function (response) {
+                    	alert("重置成功")
+                    	find();
+                    },
+                    error : function(response){
+                        alert("重置失败")
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

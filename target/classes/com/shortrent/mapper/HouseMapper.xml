@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.shortrent.dao.HouseDao">   
+    
+    
+  	<select id="getAllHouses" resultType="Map">
+  		select * from house
+  	</select>
+  	
+  	<select id="getAllSimpleHouses" resultType="Map">
+  		select * from house where online = 1 and status = 0 and flag = 0
+  	</select>
+  	
+  	
+  	<select id="userScreenHouse" resultType="Map">
+  		select * from house
+  		<where>
+  		    <if test="locate != null and locate != ''" > and locate LIKE CONCAT('%', #{locate}, '%')</if>
+  		    <if test="price1 != null" > and house_price &gt;= #{price1}</if>
+  		    <if test="price2 != null" > and house_price &lt;= #{price2}</if>
+  		    <if test="size1 != null"> and size &gt;= #{size1}</if>
+  		    <if test="size2 != null" > and size &lt;= #{size2}</if>
+  		    <if test="type != null and type != ''" > and type =#{type}</if>  		    
+  		    and online = 1 and status = 0 
+  		</where>
+  		<if test="descorasc == 'pasc'" >order by house_price asc</if>
+  		<if test="descorasc == 'pdesc'" >order by house_price desc</if>
+  		<if test="descorasc == 'sasc'" >order by size asc</if>
+  		<if test="descorasc == 'sdesc'" >order by size desc</if>
+  	</select>
+  	
+  	<select id="vagueHouse" parameterType="string" resultType="Map">
+  		select * from house where online = 1 and status = 0 and (house_name LIKE CONCAT('%', #{inputParam}, '%') or locate LIKE CONCAT('%', #{inputParam}, '%'))
+  	</select>
+  	
+  	
+  	<select id="getHouseById" resultType="com.shortrent.pojo.House">
+  		select * from house where house_id=#{house_id}
+  	</select>
+  	
+  	<select id="getHousesByName" parameterType="string" resultType="Map">
+  		select * from house where house_name LIKE CONCAT('%', #{name}, '%') and online=1 and status=0 and flag=0
+  	</select>
+    
+    <select id="getHousesByType" parameterType="string" resultType="Map">
+  		select * from house where type LIKE CONCAT('%', #{type}, '%') and online=1 and status=0 and flag=0
+  	</select>
+  	
+  	<select id="getHousesByLocate" parameterType="string" resultType="Map">
+  		select * from house where locate LIKE CONCAT('%', #{locate}, '%') and online=1 and status=0 and flag=0
+  	</select>
+  	
+  	<select id="getHousesByPrice" parameterType="int" resultType="Map">
+  		select * from house where house_price &gt;= #{price1} and house_price &lt;= #{price2} and online=1 and status=0 and flag=0
+  	</select>
+  	
+  	<select id="getHousesBySize" parameterType="int" resultType="Map">
+  		select * from house where size &gt;= #{size1} and size &lt;= #{size2} and online=1 and status=0 and flag=0
+  	</select>
+  	
+  	<update id="updateHouse" parameterType="com.shortrent.pojo.House">
+  		update house
+  		<trim prefix="set" suffixOverrides=",">
+  		<if test="house_name!=null">house_name=#{house_name},</if>
+  		<if test="type!=null">type=#{type},</if>
+  		<if test="size!=null">size=#{size},</if>
+  		<if test="house_price!=null">house_price=#{house_price},</if>
+  		<if test="photo!=null">photo=#{photo},</if>
+  		<if test="locate!=null">locate=#{locate},</if>
+  		<if test="description!=null">description=#{description},</if>
+  		</trim>
+  		where house_id=#{house_id}
+  	</update>
+  	
+  	<insert id="addHouse" parameterType="com.shortrent.pojo.House">
+  		insert into house(user_id,house_name,type,size,house_price,photo,locate,description)
+  		values(#{user_id},#{house_name},#{type},#{size},#{house_price},#{photo},#{locate},#{description})
+  	</insert>
+  	
+  	<delete id="deleteHouse" parameterType="int">
+  		delete from house where house_id=#{house_id}
+  	</delete>
+  	
+  	<update id="releaseHouse" parameterType="int">
+  		update house set online=1 where house_id=#{house_id}
+  	</update>
+  	
+  	<update id="offTheShelfHouse" parameterType="int">
+  		update house set online=0 where house_id=#{house_id}
+  	</update>
+  	
+  	<update id="rentHouse" parameterType="int">
+  		update house set status=1 where house_id=#{house_id}
+  	</update>
+  	
+  	<update id="notRentHouse" parameterType="int">
+  		update house set status=0 where house_id=#{house_id}
+  	</update>
+  	
+  	<update id="orderHouse" parameterType="int">
+  		update house set flag=1 where house_id=#{house_id}
+  	</update>
+  	
+  	<update id="notOrderHouse" parameterType="int">
+  		update house set flag=0 where house_id=#{house_id}
+  	</update>
+  	
+  	<select id="getAllNotReleaseHouses" resultType="com.shortrent.pojo.House">
+  		select * from house where online = 0 order by house_id limit #{start}, #{end}
+  	</select>
+  	
+  	<select id="getCount" resultType="Integer">
+  		select count(house_id) from house where online = 0;
+  	</select>
+  	
+  	<select id="getAllHouses2" resultType="com.shortrent.pojo.House">
+  		select * from house where status = 0 and flag = 0 order by house_id limit #{start}, #{end}
+  	</select>
+  	
+  	<select id="getCount2" resultType="Integer">
+  		select count(house_id) from house where status = 0 and flag = 0;
+  	</select>
+  	
+  	<select id="getAllUserCreateHousesByUserId" resultType="Map">
+		select * from house where house.user_id = #{user_id} limit #{start}, #{end}
+	</select>
+
+    <select id="getCount3" resultType="Integer">
+		select count(house_id) from house where house.user_id=#{user_id}
+	</select>
+
+
+	<select id="getAllUserRentHousesByUserId" resultType="Map">
+		select * from house where house.user_id = #{user_id} and house.status = 0 limit #{start}, #{end}
+	</select>
+	
+	
+    <select id="getCount4" resultType="Integer">
+		select count(house_id) from house where house.user_id=#{user_id} and house.status = 0
+	</select>
+	
+	<select id="getAllUserReleaseHousesByUserId" resultType="Map">
+		select * from house where house.user_id = #{user_id} and house.online = 1 limit #{start}, #{end}
+	</select>
+
+	 <select id="getCount5" resultType="Integer">
+		select count(house_id) from house where house.user_id=#{user_id} and house.online = 1
+	</select>
+  	
+</mapper> 

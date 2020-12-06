@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/landlord/llcss.css" />
+    <title>预约审核页面</title>
+</head>
+
+<body>
+
+    <input type="text" id="i1" th:value="${session.ll_id}" hidden="true"><br />
+
+    <div class="t">
+        <table>
+        </table>
+    </div>
+
+    <div class="btu">
+        <button id="btu_up" class="btu1">&lt;</button>
+        &nbsp;<span id="span1">1</span><span>/</span><span id="span2">-</span>&nbsp;
+        <button id="btu_down" class="btu1">&gt;</button>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+    var page
+    $(document).ready(function () {
+        let str = `<tr><th>预约编号</th><th>房屋编号</th><th>用户编号</th><th>预约看房时间</th><th>操作</th></tr>`
+        $.ajax({
+            type: "get",
+            url: "https://localhost:8080/api/v1/reserve/res/" + $("#i1").val(),
+            success: function (response) {
+                let reserves = response;
+                if (reserves.length == 0) {
+                    str += `<tr><td colspan="5">暂无预约记录</td></tr>`
+                } else {
+                	reserves.forEach(reserve => {
+                		            		
+                        str += `<tr><td>${reserve.reserve_id}</td><td>${reserve.house_id}</td>
+                                <td>${reserve.user_id}</td><td>${reserve.reserve_time}</td>
+                                <td><a href="#" onclick='releasedeletetr(this)'>通过</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                <a href="#" onclick='releasedeletetr2(this)'>不通过</a></td>
+                                </tr>`;
+                    });
+                }
+                $("table").html(str);
+            }
+        });
+    });
+    
+   
+    $(document).ready(function () {
+        $("#btu_down").click(function (e) {
+            if (parseInt($("#span1").text()) >= page) {
+                alert("这是最后一页")
+            } else {
+                $("#span1").text(parseInt($("#span1").text()) + 1);
+                var curpage_down = $("#span1").text();
+                let str = `<tr><th>预约编号</th><th>房屋编号</th><th>用户编号</th><th>预约看房时间</th><th>操作</th></tr>`;
+                $.ajax({
+                    type: "get",
+                    url: "https://localhost:8080/api/v1/reserve/res/"+$("#i1").val(),
+                    data: {
+                        "start": (curpage_down - 1) * 10
+                    },
+                    success: function (response) {
+                        let reserves = response;
+                        if (reserves.length == 0) {
+                        	
+                            str += `<tr><td colspan="5">暂无预约记录</td></tr>`
+                        } else {
+                        	console.log("hello");
+                        	reserves.forEach(reserve => {
+                        		            		
+                                str += `<tr><td>${reserve.reserve_id}</td><td>${reserve.house_id}</td>
+                                        <td>${reserve.user_id}</td><td>${reserve.reserve_time}</td>
+                                        <td><a href="#" onclick='releasedeletetr(this)'>通过</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <a href="#" onclick='releasedeletetr2(this)'>不通过</a></td>
+                                        </tr>`;
+                            });
+                        }
+                        $("table").html(str);
+                    }
+                });
+            }
+        });
+    });
+
+
+    $(document).ready(function () {
+        $("#btu_up").click(function (e) {      	
+            if (parseInt($("#span1").text()) <= 1) {
+                alert("这是第一页")
+            } else {
+                $("#span1").text(parseInt($("#span1").text()) - 1);
+                var curpage_up = $("#span1").text();
+                let str = `<tr><th>预约编号</th><th>房屋编号</th><th>用户编号</th><th>预约看房时间</th><th>操作</th></tr>`;
+                $.ajax({
+                    type: "get",
+                    /*  url: "https://localhost:8080/api/v1/house/" + $("#i1").val(), */
+                    url: "https://localhost:8080/api/v1/reserve/res/"+$("#i1").val(),
+                    data: {
+                    	"start": (curpage_up - 1) * 10
+                    },
+                    success: function (response) {
+                        let reserves = response;
+                        if (reserves.length == 0) {
+                            str += `<tr><td colspan="5">暂无预约记录</td></tr>`
+                        } else {
+                        	reserves.forEach(reserve => {
+                        		            		
+                                str += `<tr><td>${reserve.reserve_id}</td><td>${reserve.house_id}</td>
+                                        <td>${reserve.user_id}</td><td>${reserve.reserve_time}</td>
+                                        <td><a href="#" onclick='releasedeletetr(this)'>通过</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <a href="#" onclick='releasedeletetr2(this)'>不通过</a></td>
+                                        </tr>`;
+                            });
+                        }
+                        $("table").html(str);
+                    }
+                });
+            }
+        });
+    });
+
+		
+	
+	 
+	$(document).ready(function () {
+        $.ajax({
+            type: "get",
+            url: "https://localhost:8080/api/v1/reserve/getcount1/" + $("#i1").val(),
+            success: function (response) {
+            	if(response % 10==0 && response!=0)
+            		page = parseInt(response / 10);
+            	else
+                	page = parseInt(response / 10) + 1
+                $("#span2").text(page);
+            },
+            error: function (response) {
+                alert("查询失败")
+            }
+        });
+    });
+	
+	
+	function releasedeletetr(tdobject){   		
+	    var $td = $(tdobject).parent().parent().children();
+	    var nid = $td.eq(0).text();
+	    var nid2 = $td.eq(1).text();
+	    console.log(nid); 
+	    var t=$(tdobject);
+	    t.parents("tr").remove();
+	    $.ajax({
+            type: "put",
+            url: "https://localhost:8080/api/v1/reserve/check/" + nid,
+            success: function (response) {
+            	alert("预约看房时间审核通过!!!")
+            	
+            	 $.ajax({
+                     type: "put",
+                     url: "https://localhost:8080/api/v1/house/order/" + nid2,
+                     success: function (response) {
+                     	
+                     }
+         	    });
+            }
+	    });
+	} 
+    
+	function releasedeletetr2(tdobject){   		
+	    var $td = $(tdobject).parent().parent().children();
+	    var nid = $td.eq(0).text();
+	    console.log(nid); 
+	    var t=$(tdobject);
+	    t.parents("tr").remove();
+	    $.ajax({
+            type: "put",
+            url: "https://localhost:8080/api/v1/reserve/check2/" + nid,
+            success: function (response) {
+            	alert("预约看房时间审核不通过!!!")
+            }
+	    });
+	}
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用户管理</title>
+<link rel="stylesheet" href="css/ad/aduserm.css" />
+</head>
+<body>
+    <div class="t">
+        <table>
+        </table>
+    </div>
+
+    <div class="btu">
+        <button id="btu_up" class="btu2">&lt;</button>
+        &nbsp;<span id="span1">1</span><span>/</span><span id="span2">-</span>&nbsp;
+        <button id="btu_down" class="btu2">&gt;</button>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+        var page
+        $(document).ready(function () {
+            find();
+        });
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "get",
+                url: "https://localhost:8080/api/v1/user/getcount",
+                success: function (response) {
+                    $("#span3").text(response);
+                    if (response % 10 == 0 && response != 0)
+                        page = parseInt(response / 10);
+                    else
+                        page = parseInt(response / 10) + 1
+                    $("#span2").text(page);
+                },
+                error: function (response) {
+                    alert("查询失败")
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btu_down").click(function (e) {
+                if (parseInt($("#span1").text()) >= page) {
+                    alert("这是最后一页")
+                } else {
+                    $("#span1").text(parseInt($("#span1").text()) + 1);
+                    find();
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btu_up").click(function (e) {
+                if (parseInt($("#span1").text()) <= 1) {
+                    alert("这是第一页")
+                } else {
+                    $("#span1").text(parseInt($("#span1").text()) - 1);
+                    find();
+                }
+            });
+        });
+
+        //查询
+        function find() {
+            let str = `<tr><th>用户账号</th><th>用户密码</th><th>用户邮箱</th><th>用户姓名</th><th>用户性别</th>
+    				<th>用户手机</th><th>用户类别</th><th>用户状态</th><th>操作</th></tr>`
+            $.ajax({
+                type: "get",
+                url: "https://localhost:8080/api/v1/user/" + "?start=" + ($("#span1").text() - 1) * 10,
+                success: function (response) {
+                    let users = response;
+                    if (users.length == 0) {
+                        str += `<tr><td colspan="9">暂无用户</td></tr>`
+                    } else {
+                        users.forEach(user => {
+                            let cat = user.category == 0 ? "用户" : "商户";
+                            let isc = user.islock == 0 ? "正常" : "封禁";
+                            str += `<tr><td>${user.user_id}</td><td>${user.user_password}</td><td>${user.user_email}</td>
+        	                                <td>${user.user_name}</td><td>${user.sex}</td><td>${user.user_tel}</td>
+        	                                <td>${cat}</td><td>${isc}</td>
+        	                                <td width="23%">
+        	                                <a href="#" id="btu_o0">封禁</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                            <a href="#" id="btu_o1">解封</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                            <a href="#" id="btu_o2">重置密码</a>
+        	                                </td></tr>`;
+                        });
+                    }
+                    $("table").html(str);
+                }
+            });
+        }
+
+
+
+        $(document).ready(function () {
+            $("Table").on('click', '#btu_o0', function () {
+                var currentRow = $(this).closest("tr");
+                var col1 = currentRow.find("td:eq(0)").text();
+                $.ajax({
+                    type: "get",
+                    url: "https://localhost:8080/api/v1/user/block?user_id=" + col1,
+                    success: function (response) {
+                        alert("封禁成功")
+                        find();
+                    },
+                    error: function (response) {
+                        alert("该用户正处于被封禁状态")
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("Table").on('click', '#btu_o1', function () {
+                var currentRow = $(this).closest("tr");
+                var col1 = currentRow.find("td:eq(0)").text();
+                $.ajax({
+                    type: "get",
+                    url: "https://localhost:8080/api/v1/user/unblock?user_id=" + col1,
+                    success: function (response) {
+                        alert("解封成功")
+                        find();
+                    },
+                    error: function (response) {
+                        alert("该用户正处于未被封禁状态")
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("Table").on('click', '#btu_o2', function () {
+                var currentRow = $(this).closest("tr");
+                var col1 = currentRow.find("td:eq(0)").text();
+                $.ajax({
+                    type: "get",
+                    url: "https://localhost:8080/api/v1/user/updpassword?user_id=" + col1,
+                    success: function (response) {
+                        alert("重置成功")
+                        find();
+                    },
+                    error: function (response) {
+                        alert("重置失败")
+                    }
+                });
+            });
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	list-style: none;
+	outline: none;
+	box-sizing: border-box;
+}
+
+.body {
+	/* background: url(../img/bg.png) no-repeat; */
+	background: linear-gradient(to left,#ADD8E6, #B0E0E6, #AFEEEE, #00FFFF);
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-size: 100% 100%;
+	position: absolute;
+}
+
+
+.body_count {
+	width: 340px;
+	position: fixed;
+	top: 20%;
+	left: 39%;
+}
+.login_count {
+	width: 340px;
+	height: 320px;
+	padding: 10px;
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+
+.login_count_a {
+	width: 100%;
+}
+
+
+#all {
+	width: 80%;
+	margin: 20px auto 0px;
+}
+
+#option {
+	width: 100%;
+	height: 30px;
+	line-height: 27px;
+	border-radius: 10px;
+	border: 1px solid #ceffff;
+	margin-bottom: 10px;
+}
+
+#option li {
+	float: left;
+	text-align: center;
+	width: 33.33%;
+	height: 30px;
+	cursor: pointer;
+	color: #4f4f4f;
+	font-size: 14px;
+	border-radius: 10px;
+	font-weight: 500;
+}
+
+#option li.active {
+	background: linear-gradient(to left, #40E4E5, #28CCD6);
+	color: white;
+	border-radius: 10px;
+}
+
+#card li {
+	height: 100%;
+	display: none;
+}
+
+#card li.active {
+	display: block;
+}
+
+.login_bot_count {
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: #34D8DE;
+
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 40px;
+	padding: 3px;
+	margin-top: 20px;
+}
+
+.login_bot_count>img {
+	height: 20px;
+	padding-left: 5px;
+}
+
+.login_bot_count>input {
+	height: 35px;
+	border: 0px;
+	width: 80%;
+}
+
+.login_bot_count>input::-webkit-input-placeholder {
+	color: #dedede;
+}
+
+.login_bot {
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 30px;
+}
+
+.login_bot>a{
+	font-size: 12px;
+	color: #898989;
+}
+
+
+/*按钮样式*/
+
+.login_button {
+	margin-top: 2px;
+	width: 100%;
+	border: 0px;
+	height: 40px;
+	font-size: 16px;
+	color: white;
+	background: linear-gradient(to left, #40E4E5, #28CCD6);
+	border-radius: 5px;
+}
+
+.login_account_count {
+	width: 100%;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: #34D8DE;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 40px;
+	padding: 3px;
+	margin-top: 20px;
+}
+
+.login_account_count>img {
+	height: 20px;
+	padding-left: 5px;
+}
+
+.mobile_input {
+	height: 35px;
+	border: 0px;
+	width: 80%;
+}
+.vercode{
+	padding-left: 10px;
+}
+
+.login_account_counts {
+	width: 100%;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: #34D8DE;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 40px;
+	padding: 3px;
+	margin-top: 20px;
+}
+
+.login_account_counts>img {
+	height: 20px;
+	padding-left: 5px;
+}
+
+.login_account_counts>input:nth-of-type(1){
+	height: 35px;
+	border: 0px;
+	width: 50%;
+}
+
+.account_code {
+	color: white;
+	background-color: #26CBD6;
+	padding: 5px;
+	font-size: 12px;
+	cursor: pointer;
+	border: 0px;
+	border-radius: 3px;
+}
+
+.login_account_count>input::-webkit-input-placeholder {
+	color: #dedede;
+}
+
+.login_account_counts>input::-webkit-input-placeholder {
+	color: #dedede;
+}
+
+
+/*按钮样式*/
+
+.login_account_button {
+	margin-top: 40px;
+	width: 100%;
+	border: 0px;
+	height: 35px;
+	font-size: 16px;
+	color: white;
+	background: linear-gradient(to left, #40E4E5, #28CCD6);
+}

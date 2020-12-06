@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>支付成功</title>
+	<style>
+.div1{
+    text-align: center;
+    margin-top: 50px;
+}
+.time{
+    font-size: 10px;
+}
+</style>
+</head>
+<body onload="clock()">
+
+<div class="div1">
+	<h2>支&nbsp;付&nbsp;成&nbsp;功&nbsp;</h2>
+	<p id="t" class="time">将在10秒后关闭</p>
+</div>
+
+<script>
+        var time = 3;
+        function clock() {
+            time = time - 1;
+            document.getElementById("t").innerHTML = "将在" + time + "秒后关闭";
+            if(time > 0){
+                setTimeout("clock();", 1000);
+            }else{
+                self.close();
+            }
+        }
+    </script>
+
+</body>
+</html>

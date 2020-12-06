@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>发布通知</title>
+
+<style>
+.div5{
+    float: left;
+    position: relative;
+    left:50%;
+    top: 75px;
+}
+.textdiv{
+    position: relative;
+    left:-50%;
+}
+.btn1{
+    border: 1px solid #DCDCDC;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 40px;
+    left:-3%;
+}
+.btn1:hover{
+    background-color: #87CEFA;
+}
+</style>
+</head>
+<body>
+    <form class="div5" method="get">
+            <textarea style="font-size:22px;" id="text" class="textdiv" rows="10" cols="60"></textarea>
+            <br/>
+            <input type="button" id="btn1" class="btn1" value="确认发布">
+     </form> 
+     
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    
+    $(document).ready(function () {
+        $("#btn1").click(function (e) {
+        	e.preventDefault();
+        	var message1 = document.getElementById("text").value;
+        	
+        	var date = new Date();
+        	var year = date.getFullYear();
+        	var month = date.getMonth() + 1;
+        	var day = date.getDate();
+        	var Hours = date.getHours();
+        	var Minutes = date.getMinutes();
+        	var Seconds = date.getSeconds();
+        	if (month < 10) 
+        	    month = "0" + month;       
+        	if (day < 10) 
+        	    day = "0" + day;
+        	var s_createtime = year + '-' + month + '-' + day + ' ' + Hours + ':' + Minutes + ':' + Seconds;
+        	console.log(s_createtime);
+        	var announcement ={
+        			message : message1,
+        			anno_time : s_createtime
+        	}
+        	$.ajax({
+                type: "post",
+                url: "https://localhost:8080/api/v1/announcement",
+                data: JSON.stringify(announcement),
+                contentType: "application/json;charset=utf-8",
+                dataType: "text",
+                success: function (data){          
+                	alert("发布公告成功!!!");
+                },
+                error: function (data) { 
+                	var json=JSON.parse(data.responseText);
+                    alert(json.message);
+                } 
+            });
+        });
+    });
+
+    </script>
+</body>
+</html>

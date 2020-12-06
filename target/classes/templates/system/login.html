@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登陆</title>
+<link rel="stylesheet" href="css/system/login.css" />
+</head>
+<body>
+
+<div class="body">
+	<div class="body_count">
+		<div class="login_count">
+			<div class="login_count_a">
+				<div id="all">
+					<ul id="option">
+						<li class="active">密码登录</li>
+						<li class="">手机登录</li>
+						<li class="">邮箱登录</li>
+					</ul>
+
+					<ul id="card">
+						<li class="active">
+							<!--输入框-->
+							<div class="login_bot_count">
+								<img src="images/system/user.png" alt="账号" title="账号"/>
+								<input type="text" placeholder="请输入账号" id="i1" />
+							</div>
+							<div class="login_bot_count">
+								<img src="images/system/lock.png" alt="密码" title="密码"/>
+								<input type="password" placeholder="请输入密码" id="i2" />
+							</div>
+							<div class="login_bot">
+								<a href="/changepwd">忘记密码</a><a href="/registered">注册账号</a>
+							</div>
+							<!--登录按钮-->
+							<button class="login_button" id="btu1">登录</button>
+						</li>
+
+						<li>
+							<!--输入框-->
+							<div class="login_account_count">
+								<img src="images/system/phone.png" alt="手机" title="手机"/>
+								<input type="text" class="mobile_input" placeholder="请输入手机号码" id="i3"/>
+							</div>
+							<div class="login_account_counts">
+								<img src="images/system/pecode.png" alt="验证码" title="验证码"/>
+								<input type="text" class="vercode" placeholder="请输入验证码" id="i4"/>
+								<input class="account_code" type="button" id="btn_pcode" value="获取验证码" />
+							</div>
+							<div class="login_bot">
+								<a href="/changepwd">忘记密码</a><a href="/registered">注册账号</a>
+							</div>
+							<!--登录按钮-->
+							<button class="login_button" id="btu2">登录</button>
+						</li>
+
+						<li>
+							<!--输入框-->
+							<div class="login_account_count">
+								<img src="images/system/mailbox.png" alt="邮箱" title="邮箱"/>
+								<input type="text" class="mobile_input" placeholder="请输入邮箱" id="i5"/>
+							</div>
+							<div class="login_account_counts">
+								<img src="images/system/pecode.png" alt="验证码" title="验证码" />
+								<input type="text" class="vercode" placeholder="请输入验证码" id="i6"/>
+								<input class="account_code" type="button" id="btn_ecode" value="获取验证码" />
+							</div>
+							<div class="login_bot">
+								<a href="/changepwd">忘记密码</a><a href="/registered">注册账号</a>
+							</div>
+							<!--登录按钮-->
+							<button class="login_button" id="btu3">登录</button>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+		$('#option li').click(function () {
+			$(this).addClass('active').siblings().removeClass('active');
+			var a = $(this).index();
+			$('#card li:eq(' + a + ')').addClass('active').siblings().removeClass('active');
+		})
+
+        $(document).ready(function () {
+            $("#btu1").click(function (e) {
+                $.ajax({
+                    type: "post",
+                    url: "https://localhost:8080/api/v1/system/login",
+                    data: {
+                        "user_id": $("#i1").val(),
+                        "user_password": $("#i2").val()
+                    },
+                    success : function(response){
+                  		if(response == 0){
+							window.location.href="/?user_id="+$("#i1").val();
+                  		}else if(response == 1){
+							window.location.href="/landlord?ll_id="+$("#i1").val();
+                  		}else{
+							window.location.href="/admin";
+                  		}
+                    },
+                    error : function(response){
+                    	alert("账号不存在或密码错误")
+                    }
+                });
+            });
+        });
+
+		/* 手机号验证码 */
+		var pcode;
+        $(document).ready(function () {
+            $("#btu2").click(function (e) {
+				if(pcode != $("#i4").val()){
+					alert("验证码错误！")
+				}else{
+					$.ajax({
+						type: "get",
+						url: "https://localhost:8080/api/v1/user/phone/" + $("#i3").val(),
+
+						success : function(response){
+							var cat = response.category;
+							var id = response.user_id;
+							if(cat == 0){
+								window.location.href="/?user_id=" + id;
+							}else if(cat == 1){
+								window.location.href="/landlord?ll_id=" + id;
+							}else{
+								window.location.href="/admin";
+							}
+						},
+						error : function(response){
+							alert("登陆失败！")
+						}
+					});
+				}
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btn_pcode").click(function (e) {
+				$("#btn_pcode").attr("disabled",true);
+				if($("#i3").val().trim() == ""){
+					alert("请输入正确的手机号！");
+					$("#btn_pcode").attr("disabled",false)
+				}else{
+					$.ajax({
+						type: "get",
+						url: "https://127.0.0.1:8080/api/v1/mail/sendPhone/" + $("#i3").val(),
+						success : function(response){
+							pcode = response;
+							alert("验证码发送成功")
+						},
+						error : function(response){
+							alert("验证码发送失败，请检查手机号是否输入正确！")
+						},
+						complete : function(response){
+							$("#btn_pcode").attr("disabled",false)
+						}
+					});
+				}
+            });
+        });
+
+		/* 邮箱验证码 */
+		var ecode;
+        $(document).ready(function () {
+            $("#btu3").click(function (e) {
+				if(ecode != $("#i6").val()){
+					alert("验证码错误！")
+				}else{
+					$.ajax({
+						type: "get",
+						url: "https://localhost:8080/api/v1/user/email/" + $("#i5").val(),
+						success : function(response){
+							var cat = response.category;
+							var id = response.user_id;
+							if(cat == 0){
+								window.location.href="/?user_id=" + id;
+							}else if(cat == 1){
+								window.location.href="/landlord?ll_id=" + id;
+							}else{
+								window.location.href="/admin";
+							}
+						},
+						error : function(response){
+							alert("登陆失败！")
+						}
+					});
+				}
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btn_ecode").click(function (e) {
+				$("#btn_ecode").attr("disabled",true);
+				var reg = /^[0-9]*@.*com$/;
+                var pattern = new RegExp(reg);
+				if($("#i5").val().trim() == "" || !pattern.test($("#i5").val())){
+					alert("请输入正确的邮箱！");
+					$("#btn_ecode").attr("disabled",false)
+				}else{
+					$.ajax({
+						type: "get",
+						url: "https://localhost:8080/api/v1/mail/sendEmail/" + $("#i5").val(),
+						success : function(response){
+							ecode = response
+							alert("验证码发送成功")
+						},
+						error : function(response){
+							alert("验证码发送失败，请检查邮箱是否输入正确！")
+						},
+						complete : function(response){
+							$("#btn_ecode").attr("disabled",false)
+						}
+					});
+				}
+            });
+        });
+
+		$(document).ready(function(){
+			$("#btn_ecode").mouseenter(function(){
+                $("#btn_ecode").css("background-color","#34D8DE");
+			});
+			$("#btn_ecode").mouseleave(function(){
+                $("#btn_ecode").css("background-color"," #40E4E5");
+            });
+		});
+
+		$(document).ready(function(){
+			$("#btn_pcode").mouseenter(function(){
+                $("#btn_pcode").css("background-color","#34D8DE");
+			});
+			$("#btn_pcode").mouseleave(function(){
+                $("#btn_pcode").css("background-color"," #40E4E5");
+            });
+        });
+	</script>
+</body>
+
+</html>

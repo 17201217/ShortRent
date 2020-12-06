@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审核订单</title>
+<link rel="stylesheet" href="css/ad/aduserm.css" />
+</head>
+
+<body>
+
+    <div class="t">
+        <table>
+        </table>
+    </div>
+	
+	<div class="btu">
+        <button id="btu_up" class="btu2">&lt;</button>
+        &nbsp;<span id="span1">1</span><span>/</span><span id="span2">-</span>&nbsp;
+        <button id="btu_down" class="btu2">&gt;</button>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    	var page
+        $(document).ready(function () {
+            let str = `<tr id="s"><th>订单编号</th><th>租户id</th><th>房屋编号</th><th>订单生成时间</th>
+                    <th>价格</th><th>租房开始时间</th><th>租房结束时间</th><th>操作</th></tr>`
+            $.ajax({
+                type: "get",
+               /*  url: "https://localhost:8080/api/v1/house/" + $("#i1").val(), */
+                url: "https://localhost:8080/api/v1/orderlist/orders2",
+                success: function (response) {
+                    let orders = response;
+                    if (orders.length == 0) {
+                        str += `<tr><td colspan="8">暂无未审核的订单信息</td></tr>`
+                    } else {
+                    	orders.forEach(order => {
+                            str += `<tr><td>${order.order_id}</td><td>${order.rent_id}</td>
+                                    <td>${order.house_id}</td><td>${order.order_time}</td>
+                                    <td>${order.totalcost}</td><td>${order.starttime}</td>
+                                    <td>${order.endtime}</td>
+                                    <td><a href="#" onclick='releasedeletetr(this)'>通过</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <a href="#" onclick='deletetr(this)'>未通过</a>
+                                    </td></tr>`;
+                        });
+                    }
+                    $("table").html(str);
+                }
+            });
+        });
+	
+    	
+    	$(document).ready(function () {
+            $.ajax({
+                type: "get",
+                url: "https://localhost:8080/api/v1/orderlist/getcount",
+                success: function (response) {
+                	if(response % 10==0 && response!=0)
+                		page = parseInt(response / 10);
+                	else
+                    	page = parseInt(response / 10) + 1
+                    $("#span2").text(page);
+                },
+                error: function (response) {
+                    alert("查询失败")
+                }
+            });
+        });
+    	
+    	$(document).ready(function () {
+            $("#btu_down").click(function (e) {
+                if (parseInt($("#span1").text()) >= page) {
+                    alert("这是最后一页")
+                } else {
+                    $("#span1").text(parseInt($("#span1").text()) + 1);
+                    var curpage_down = $("#span1").text();
+                    let str = `<tr id="s"><th>订单编号</th><th>租户id</th><th>房屋编号</th><th>订单生成时间</th>
+                        <th>价格</th><th>租房开始时间</th><th>租房结束时间</th><th>操作</th></tr>`                
+                    $.ajax({
+                        type: "get",
+                        url: "https://localhost:8080/api/v1/orderlist/orders2?start=" + (curpage_down - 1) * 10,
+                        success: function (response) {
+                            let orders = response;
+                            if (orders.length == 0) {
+                            	str += `<tr><td colspan="8">暂无未审核的订单信息</td></tr>`
+                            } else {
+                                orders.forEach(order => {
+                                	str += `<tr><td>${order.order_id}</td><td>${order.rent_id}</td>
+                                        <td>${order.house_id}</td><td>${order.order_time}</td>
+                                        <td>${order.totalcost}</td><td>${order.starttime}</td>
+                                        <td>${order.endtime}</td>
+                                        <td><a href="#" onclick='releasedeletetr(this)'>通过</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <a href="#" onclick='deletetr(this)'>未通过</a></td></tr>`;
+                            	});
+                            }
+                            $("table").html(str);
+                        }
+                    });
+                }
+            });
+        });
+    	
+    	$(document).ready(function () {
+            $("#btu_up").click(function (e) {
+                if (parseInt($("#span1").text()) <= 1) {
+                    alert("这是第一页")
+                } else {
+                    $("#span1").text(parseInt($("#span1").text()) - 1);
+                    var curpage_up = $("#span1").text();
+                    let str = `<tr id="s"><th>订单编号</th><th>租户id</th><th>房屋编号</th><th>订单生成时间</th>
+                        <th>价格</th><th>租房开始时间</th><th>租房结束时间</th><th>操作</th></tr>` 
+                    $.ajax({
+                        type: "get",
+                        url: "https://localhost:8080/api/v1/orderlist/orders2?start=" + (curpage_up - 1) * 10,
+                        success: function (response) {
+                            let orders = response;
+                            if (orders.length == 0) {
+                            	str += `<tr><td colspan="8">暂无未审核的订单信息</td></tr>`
+                            } else {
+                            	orders.forEach(order => {
+                            		str += `<tr><td>${order.order_id}</td><td>${order.rent_id}</td>
+                                        <td>${order.house_id}</td><td>${order.order_time}</td>
+                                        <td>${order.totalcost}</td><td>${order.starttime}</td>
+                                        <td>${order.endtime}</td>
+                                        <td><a href="#" onclick='releasedeletetr(this)'>通过</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <a href="#" onclick='deletetr(this)'>未通过</a></td></tr>`;
+                            	});
+                            }
+                            $("table").html(str);
+                        }
+                    });
+                }
+            });
+        });
+    	
+    	
+
+    	function releasedeletetr(tdobject){   		
+    	    var $td = $(tdobject).parent().parent().children();
+    	    var nid = $td.eq(0).text();
+    	    var nid2 = $td.eq(2).text();//获取房屋编号，让它下架
+    	    var money = parseInt($td.eq(4).text()*0.02);
+    	    var t=$(tdobject);
+    	    t.parents("tr").remove();
+    	    $.ajax({
+                type: "put",
+                url: "https://localhost:8080/api/v1/orderlist/audit/" + nid,
+                success: function (response) {
+                	alert("审核通过!!!获取"+money+"佣金!");
+                	  $.ajax({
+                          type: "put",
+                          url: "https://localhost:8080/api/v1/house/rent/" + nid2,
+                          success: function (response) {
+                          	alert("房屋已出租!!!")
+                          }
+              	    });
+                }
+    	    });
+    	}  	
+    	
+    	function deletetr(tdobject){   		
+    	    var $td = $(tdobject).parent().parent().children();
+    	    var nid = $td.eq(0).text();
+    	    console.log(nid);
+    	    var t=$(tdobject);
+    	    t.parents("tr").remove();
+    	    $.ajax({
+                type: "delete",
+                url: "https://localhost:8080/api/v1/orderlist/" + nid,
+                success: function (response) {
+                	alert("审核未通过!!!已删除!!!")
+                }
+    	    });
+    	}
+
+    </script>
+</body>
+
+</html>

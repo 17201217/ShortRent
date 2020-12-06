@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shortrent.dao.CollectDao">
+
+	<!-- 查询所有收藏 -->
+	<select id="getAllCollect" parameterType="Map"
+		resultType="com.shortrent.pojo.Collect">
+		select * from collect order by collecttime desc
+	</select>
+
+	<!-- 查询某个id所有收藏，分页 -->
+	<select id="getCollectByid" parameterType="Map"
+		resultType="com.shortrent.pojo.Collect">
+		select * from collect where user_id = #{user_id} order by collecttime desc
+		limit #{start}, #{end}
+	</select>
+
+	<!-- 查询某个id收藏数量 -->
+	<select id="getCountbyid" parameterType="String"
+		resultType="Integer">
+		select count(collect_id) from collect where user_id = #{user_id}
+	</select>
+
+	<delete id="delcollect" parameterType="Map">
+		delete from collect where
+		user_id = #{user_id} and house_id = #{house_id}
+	</delete>
+
+    
+    <!-- 添加一个收藏记录 -->
+	<insert id="addCollect" parameterType="com.shortrent.pojo.Collect">
+		insert into
+		collect(user_id,house_id,collecttime)
+		values(#{user_id},#{house_id},#{collecttime})
+	</insert>
+	
+</mapper> 

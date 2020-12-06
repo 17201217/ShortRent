@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.shortrent.dao.ReserveDao">  
+	
+	<!-- 查询所有预约 -->
+    <select id="getAllReserve" parameterType="Map" resultType="com.shortrent.pojo.Reserve">
+  		select * from reserve where user_id = #{user_id} order by reserve_time desc limit #{start}, #{end}
+  	</select>
+  	
+  	<!-- 查询所有user数量 -->
+  	<select id="getCountbyid" resultType="Integer">
+  		select count(reserve_id) from reserve where user_id = #{user_id}
+  	</select>
+  	
+  	<insert id="addReserve" parameterType="com.shortrent.pojo.Reserve">
+		insert into reserve(user_id,house_id,reserve_time)
+		values(#{user_id},#{house_id},#{reserve_time})
+	</insert>
+  	
+  	<!-- 查询所有预约 -->
+    <select id="getReserve" parameterType="Map" resultType="com.shortrent.pojo.Reserve">
+  		select * from reserve where house_id in (select house_id from house where user_id = #{user_id} ) and status = '0' order by reserve_time desc limit #{start}, #{end}
+  	</select>
+  	
+  	<!--  -->
+  	<select id="getCountReserve" resultType="Integer">
+  		select count(reserve_id) from reserve where house_id in (select house_id from house where user_id = #{user_id}) and status = '0'
+  	</select>
+  	
+  	<!-- 预约看房时间审核通过 -->
+  	<update id="passReserve" parameterType="int">
+  		update reserve set status = 1 where reserve_id=#{reserve_id}
+  	</update>
+  	
+  	<!-- 预约看房时间审核不通过 -->
+  	<update id="noPassReserve" parameterType="int">
+  		update reserve set status = 2 where reserve_id=#{reserve_id}
+  	</update>
+  	
+  	<!-- 预约看房时间（取消预约） -->
+  	<delete id="deleteReserve" parameterType="int">
+  		delete from reserve where reserve_id=#{reserve_id}
+  	</delete>
+  	
+</mapper>
